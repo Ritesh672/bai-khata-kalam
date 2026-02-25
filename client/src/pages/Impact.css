@@ -1,0 +1,199 @@
+.numbers-section {
+  background-color: #FDFCF0; /* Matching Home page background */
+}
+
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.impact-box-card {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  text-align: left; /* Left aligned as requested */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Individual Impact Card Colors matching Home page */
+.impact-card-0 { border-top: 5px solid #3b82f6; } /* Blue */
+.impact-card-1 { border-top: 5px solid #10b981; } /* Green */
+.impact-card-2 { border-top: 5px solid #f97316; } /* Orange */
+.counters-grid .impact-card-3 { border-top: 5px solid #a855f7 !important; } /* Purple */
+
+.impact-card-0 .impact-icon-box { background: #eff6ff; color: #3b82f6; }
+.impact-card-1 .impact-icon-box { background: #f0fdf4; color: #10b981; }
+.impact-card-2 .impact-icon-box { background: #fff7ed; color: #f97316; }
+.impact-card-3 .impact-icon-box { background: #f5f3ff; color: #a855f7; }
+
+.impact-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.impact-box-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.impact-box-card p {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gallery-section {
+  background-color: #F2F2F2 !important;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  height: 300px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--white);
+}
+
+.gallery-item:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.case-content h3 {
+  margin: 0.5rem 0 1rem;
+}
+
+.case-content .case-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial */
+.testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stars {
+  color: #ffb800;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .quote {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--text);
+  line-height: 1.4;
+  border: none;
+  padding: 0;
+}
+
+.testifier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.testifier img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testifier h5 { margin: 0; }
+.testifier p { margin: 0; font-size: 0.875rem; color: var(--text-muted); }
+
+.case-studies {
+  background-color: #FCF9EA; /* Warm cream to match About page timeline */
+  padding-top: 3rem; /* Reduced for tighter layout */
+}
+
+.case-studies .section-header {
+  margin-bottom: 2rem;
+}
+
+.case-studies .section-header h2 {
+  color: #0F172A; /* Deep Blue for contrast */
+}
+
+@media (max-width: 992px) {
+  .counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .testimonial-card .quote {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 2.5rem 1.5rem;
+  }
+}

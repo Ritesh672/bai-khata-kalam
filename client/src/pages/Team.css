@@ -1,0 +1,210 @@
+.team-hero {
+  background: #E1D7BD !important;
+}
+
+.team-grid-section {
+  background-color: #f2f2f2 !important;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.team-card {
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.member-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.social-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(37, 99, 235, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.team-card:hover .social-overlay {
+  opacity: 1;
+}
+
+.team-card:hover .member-image img {
+  transform: scale(1.1);
+}
+
+.social-overlay a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.team-card:hover .social-overlay a {
+  transform: translateY(0);
+}
+
+.social-overlay a:hover {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.member-info {
+  padding: 1.25rem 1rem;
+}
+
+.member-info h4 {
+  margin-bottom: 0.125rem;
+}
+
+.member-info .role {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.member-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background-color: #001F3D !important;
+  color: #ffffff;
+}
+
+.philosophy-section h2 {
+  color: #ffffff !important;
+}
+
+.philosophy-section .section-header p {
+  color: #94a3b8 !important;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.impact-box-card {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Individual Card Colors */
+.impact-card-0 { border-top: 5px solid #3b82f6; } /* Blue */
+.impact-card-1 { border-top: 5px solid #10b981; } /* Green */
+.impact-card-2 { border-top: 5px solid #f97316; } /* Orange */
+
+.impact-card-0 .impact-icon-box { background: #eff6ff; color: #3b82f6; }
+.impact-card-1 .impact-icon-box { background: #f0fdf4; color: #10b981; }
+.impact-card-2 .impact-icon-box { background: #fff7ed; color: #f97316; }
+
+.impact-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.impact-box-card h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.impact-box-card p {
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .philosophy-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .member-image {
+    height: 300px;
+  }
+}

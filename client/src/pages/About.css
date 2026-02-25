@@ -1,0 +1,434 @@
+.about-hero {
+  padding: 8rem 0 5rem;
+  background: radial-gradient(circle, #D8C9A7 0%, #E5DCC5 100%) !important;
+  text-align: center;
+}
+
+.about-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a202c; /* Deep Charcoal */
+}
+
+.about-hero-content p {
+  font-size: 1.25rem;
+  color: #4a5568; /* Slightly darker muted text for contrast */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card-section {
+  padding-top: 0;
+  margin-top: -3rem;
+  background-color: #E1D7BD;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.mission-card, .vision-card {
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition);
+}
+
+.mission-card:hover, .vision-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.mission-card h3, .vision-card h3 {
+  font-size: 1.75rem;
+  font-weight: 800; /* Increased font weight */
+  margin-bottom: 1rem;
+  color: #1E3A8A; /* Deep Navy */
+}
+
+.impact-icon-box {
+  width: 56px;
+  height: 56px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3, .vision-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0F172A;
+}
+
+/* Founder section */
+.founder-section {
+  background-color: #001F3D;
+  color: var(--white);
+}
+
+.founder-section h2 {
+  color: var(--white) !important;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.founder-image img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--white); /* White for better visibility on dark navy */
+  margin: 1.5rem 0;
+  line-height: 1.4;
+  border-left: 4px solid var(--secondary);
+  padding-left: 1.5rem;
+  font-weight: 600;
+}
+
+.founder-info h4 {
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.founder-info p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Timeline */
+.timeline-section {
+  background-color: #FCF9EA; /* Warm cream background */
+  color: var(--text);
+}
+
+.timeline-section .section-header h2 {
+  color: #0F172A; /* Deep Blue for header to contrast with cream */
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background: #8B5E3C; /* Deep Oak color */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.timeline-item {
+  padding: 1rem 3rem;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+.timeline-content {
+  padding: 2.5rem;
+  position: relative;
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h4 {
+  color: #1E3A8A; /* Deep Navy */
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+}
+
+.year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #2563eb; /* Brand Blue */
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Certifications Section */
+.certifications-section {
+  background-color: #525080;
+  color: #acb0b7;
+}
+
+.certifications-section h2 {
+  color: #d6dae0 !important;
+  font-weight: 700;
+}
+
+.certifications-section .badge {
+  background-color: #4ade80; /* Soft green */
+  color: #1a202c;
+}
+
+.section-subtitle {
+  color: #d6dae0;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cert-card {
+  padding: 0;
+  overflow: hidden;
+  border: 4px solid rgba(19, 18, 18, 0.1);
+  background: var(--white);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Certificate Card Colors */
+.cert-card-0 { border-top: 5px solid #3b82f6 !important; } /* Blue */
+.cert-card-1 { border-top: 5px solid #10b981 !important; } /* Green */
+.cert-card-2 { border-top: 5px solid #f97316 !important; } /* Orange */
+.cert-card-3 { border-top: 5px solid #ef4444 !important; } /* Red */
+.cert-card-4 { border-top: 5px solid #8b5cf6 !important; } /* Purple */
+
+.cert-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: #f8fafc;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cert-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-image img {
+  transform: scale(1.05);
+}
+
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+.view-btn {
+  background: var(--white);
+  color: var(--primary);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cert-info {
+  padding: 1.5rem;
+}
+
+.cert-info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.cert-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.trust-statement {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: #f0fdf4;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #bbfcbd;
+}
+
+.trust-statement p {
+  font-weight: 600;
+  color: #166534;
+  margin: 0;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem;
+}
+
+.trust-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--white);
+  border-radius: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid #4ade80; /* Pale green used in legal banner */
+  transition: var(--transition);
+}
+
+.trust-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.trust-card h4 {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.25rem;
+  color: #1E3A8A; /* Deep Navy */
+  font-weight: 800;
+}
+
+.trust-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.75rem;
+  }
+
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-hero {
+    padding-bottom: 2rem;
+  }
+
+  .card-section {
+    margin-top: 0;
+    padding-top: 3rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-card, .vision-card {
+    padding: 2rem;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px;
+  }
+  
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+  
+  .trust-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-card {
+    padding: 2rem;
+  }
+}
+.trust-badges {
+  background-color: #F2F2F2 !important;
+}
