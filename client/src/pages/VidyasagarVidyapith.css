@@ -1,0 +1,152 @@
+.vidyasagar-hero {
+  padding: 8rem 0 5rem;
+  background: radial-gradient(circle, #D8C9A7 0%, #E5DCC5 100%) !important;
+  text-align: center;
+}
+
+.vidyasagar-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+}
+
+.vidyasagar-hero p {
+  font-size: 1.25rem;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vidyasagar-about {
+  background-color: #FCF9EA;
+}
+
+.vidyasagar-about h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem; /* Increased gap */
+}
+
+.vidyasagar-about p {
+  font-size: 1.1rem; /* Slightly smaller */
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.about-image-box {
+  width: 100%;
+  max-width: 450px; /* Reduced to match text height better */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-left: auto; /* Push to right */
+}
+
+.about-image-box img {
+  width: 100%;
+  height: 380px; /* Specific height to match typical text block height */
+  object-fit: cover; /* Maintain aspect ratio without stretching */
+  display: block;
+}
+
+.collaboration-section {
+  background-color: #F2F2F2;
+}
+
+.collaboration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.collaboration-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition);
+  border-top: 5px solid var(--primary);
+}
+
+.collaboration-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.collaboration-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1E3A8A;
+}
+
+.vidyasagar-impact {
+  background-color: #E5DCC5;
+}
+
+.impact-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Make horizontal */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.impact-item-box {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border-top: 5px solid #10b981; /* Changed to border-top since horizontal */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.impact-item-box h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.cta-section {
+  background-color: #001F3D;
+  color: var(--white);
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything */
+}
+
+.cta-section h2, .cta-section p {
+  color: var(--white) !important;
+}
+
+.cta-button-group {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 992px) {
+  .vidyasagar-hero h1 {
+    font-size: 2.75rem;
+  }
+  .collaboration-grid, .impact-details {
+    grid-template-columns: 1fr;
+  }
+  .about-image-box {
+    margin: 2rem auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .vidyasagar-hero h1 {
+    font-size: 2.25rem;
+  }
+  .collaboration-card {
+    padding: 2rem;
+  }
+}

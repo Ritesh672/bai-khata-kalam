@@ -24,6 +24,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "Vidyasagar Vidyapith", path: "/vidyasagar-vidyapith" },
     { name: "About", path: "/about" },
     { name: "Impact", path: "/impact" },
     { name: "Team", path: "/team" },
@@ -44,7 +45,7 @@ const Navbar = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`nav-link ${location.pathname === link.path ? "active" : ""}`}
+              className={`nav-link ${location.pathname === link.path ? "active" : ""} ${link.name === "Vidyasagar Vidyapith" ? "nav-highlight" : ""}`}
             >
               {link.name}
             </Link>
@@ -75,7 +76,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`mobile-link ${location.pathname === link.path ? "active" : ""}`}
+                  className={`mobile-link ${location.pathname === link.path ? "active" : ""} ${link.name === "Vidyasagar Vidyapith" ? "nav-highlight" : ""}`}
                 >
                   {link.name}
                 </Link>

@@ -70,6 +70,15 @@
   width: 100%;
 }
 
+.nav-link.nav-highlight {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.nav-link.nav-highlight:after {
+  background: var(--secondary);
+}
+
 .donate-btn {
   padding: 0.6rem 1.5rem;
 }
@@ -109,6 +118,11 @@
 
 .mobile-link.active {
   color: var(--primary);
+}
+
+.mobile-link.nav-highlight {
+  color: var(--secondary);
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
