@@ -9,6 +9,7 @@ import Impact from './pages/Impact';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
 import Donate from './pages/Donate';
+import DonationSuccess from './pages/DonationSuccess';
 import VidyasagarVidyapith from './pages/VidyasagarVidyapith';
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/donation-success" element={<DonationSuccess />} />
           </Routes>
         </main>
         <Footer />

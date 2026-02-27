@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import { CreditCard, Heart, Package, BookOpen, GraduationCap, ShieldCheck } from 'lucide-react';
 import './Donate.css';
 
@@ -10,11 +11,79 @@ import nashaCert from '../assets/images/nashamukt.jpeg';
 import pledgeCert from '../assets/images/pledge.jpeg';
 
 const Donate = () => {
+  const navigate = useNavigate();
   const [amount, setAmount] = useState('2000');
-  const [donationType, setDonationType] = useState('monthly');
   const [isCorporate, setIsCorporate] = useState(false);
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [companyName, setCompanyName] = useState('');
+  const [businessEmail, setBusinessEmail] = useState('');
+  const [isCsr, setIsCsr] = useState(false);
+
   const presets = ['500', '2000', '5000', '10000'];
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+
+    if (!amount || parseFloat(amount) <= 0) {
+      alert("Please enter a valid donation amount.");
+      return;
+    }
+    if (!name || !email || !phone) {
+      alert("Please fill in your name, email, and phone number.");
+      return;
+    }
+
+    const options = {
+      key: process.env.REACT_APP_RAZORPAY_KEY,
+      amount: parseFloat(amount) * 100, // paise
+      currency: "INR",
+      name: "Bai Khata Kalam",
+      description: "Donation for Education",
+      image: "https://www.baikhatakalam.com/favicon.jpg", // Optional logo
+      handler: function (response) {
+        // Redirect to success page with state
+        navigate('/donation-success', {
+          state: {
+            paymentId: response.razorpay_payment_id,
+            amount: amount,
+            name: name,
+            email: email,
+            date: new Date().toLocaleString()
+          }
+        });
+      },
+      prefill: {
+        name: name,
+        email: email,
+        contact: phone,
+      },
+      notes: {
+        message: message,
+        company: isCorporate ? companyName : "Individual",
+        is_corporate: isCorporate,
+        is_csr: isCorporate && isCsr
+      },
+      theme: {
+        color: "#2563eb", // Primary blue
+      },
+    };
+
+    try {
+      const rzp1 = new window.Razorpay(options);
+      rzp1.on('payment.failed', function (response) {
+        alert("Payment failed. Please try again.");
+        console.error("Payment failure response:", response.error);
+      });
+      rzp1.open();
+    } catch (error) {
+      console.error("Razorpay script not loaded or error opening modal:", error);
+      alert("Payment gateway is temporarily unavailable. Please try again later.");
+    }
+  };
 
   const impacts = [
     { icon: <Package />, amount: '₹500', text: 'Provides essential school supplies for one child.' },
@@ -38,21 +107,6 @@ const Donate = () => {
         <div className="donate-grid">
           {/* Donation Form */}
           <div className="donate-form-card card">
-            <div className="form-tabs">
-              <button 
-                className={donationType === 'one-time' ? 'active' : ''} 
-                onClick={() => setDonationType('one-time')}
-              >
-                One-time
-              </button>
-              <button 
-                className={donationType === 'monthly' ? 'active' : ''} 
-                onClick={() => setDonationType('monthly')}
-              >
-                Monthly
-              </button>
-            </div>
-
             <div className="amount-selection">
               <label>Select Amount (₹)</label>
               <div className="preset-grid">
@@ -74,21 +128,39 @@ const Donate = () => {
               />
             </div>
 
-            <form className="details-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="details-form" onSubmit={handlePayment}>
               <div className="form-group-row">
                 <div className="form-group">
                   <label>Full Name</label>
-                  <input type="text" placeholder="John Doe" required />
+                  <input 
+                    type="text" 
+                    placeholder="John Doe" 
+                    required 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
                 </div>
                 <div className="form-group">
                   <label>Email Address</label>
-                  <input type="email" placeholder="john@example.com" required />
+                  <input 
+                    type="email" 
+                    placeholder="john@example.com" 
+                    required 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
               </div>
 
               <div className="form-group">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="+91 98765 43210" required />
+                <input 
+                  type="tel" 
+                  placeholder="+91 98765 43210" 
+                  required 
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </div>
 
               <div className="checkbox-group">
@@ -109,14 +181,29 @@ const Donate = () => {
                 >
                   <div className="form-group">
                     <label>Company Name</label>
-                    <input type="text" placeholder="Acme Corp" />
+                    <input 
+                      type="text" 
+                      placeholder="Acme Corp" 
+                      value={companyName}
+                      onChange={(e) => setCompanyName(e.target.value)}
+                    />
                   </div>
                   <div className="form-group">
                     <label>Business Email</label>
-                    <input type="email" placeholder="csr@acme.com" />
+                    <input 
+                      type="email" 
+                      placeholder="csr@acme.com" 
+                      value={businessEmail}
+                      onChange={(e) => setBusinessEmail(e.target.value)}
+                    />
                   </div>
                   <div className="checkbox-group">
-                    <input type="checkbox" id="csr" />
+                    <input 
+                      type="checkbox" 
+                      id="csr" 
+                      checked={isCsr}
+                      onChange={() => setIsCsr(!isCsr)}
+                    />
                     <label htmlFor="csr">Interested in CSR partnership</label>
                   </div>
                 </motion.div>
@@ -124,14 +211,18 @@ const Donate = () => {
 
               <div className="form-group">
                 <label>Message (Optional)</label>
-                <textarea placeholder="Your message of hope..."></textarea>
+                <textarea 
+                  placeholder="Your message of hope..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary w-full">
                 Proceed to Secure Payment
               </button>
               <p className="payment-note text-center">
-                <CreditCard size={14} /> Secured by industry standard encryption
+                <CreditCard size={14} aria-hidden="true" /> Secured by industry standard encryption
               </p>
             </form>
 

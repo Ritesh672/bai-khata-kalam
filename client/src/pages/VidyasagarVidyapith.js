@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { BookOpen, Users, Star, Heart, GraduationCap } from 'lucide-react';
+import { BookOpen, Users, Heart, GraduationCap } from 'lucide-react';
 import schoolImg from '../assets/images/vidyasagar_school.png';
 import './VidyasagarVidyapith.css';
 
