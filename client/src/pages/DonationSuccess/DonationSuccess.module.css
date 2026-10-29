@@ -1,0 +1,64 @@
+.page {
+  min-height: 80vh;
+  padding: calc(var(--nav-h) + 3rem) 0 5rem;
+  background: radial-gradient(circle at 50% 0%, var(--green-50), var(--slate-50) 60%);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 680px;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: var(--radius-xl);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.card h1 { font-size: clamp(2rem, 3vw + 1rem, 2.75rem); font-weight: 800; }
+.subtitle { font-size: 1.15rem; color: var(--text-muted); }
+
+.check { width: 88px; height: 88px; }
+.check circle, .check path { fill: none; stroke: var(--green-600); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+
+.receipt {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.75rem 1.75rem 2rem;
+  background: var(--cream-50);
+  border: 1px dashed var(--slate-300);
+  border-radius: var(--radius);
+  text-align: left;
+}
+/* Perforated bottom edge */
+.receipt::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 16px;
+  background: radial-gradient(circle at 8px 8px, var(--white) 6px, transparent 6.5px) repeat-x;
+  background-size: 16px 16px;
+}
+.receipt h2 { margin-bottom: 1rem; font-size: 1.15rem; }
+.receipt dl { display: grid; gap: 0.6rem; }
+.receipt dl > div { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--slate-200); }
+.receipt dt { color: var(--text-muted); }
+.receipt dd { font-weight: 600; color: var(--slate-900); text-align: right; overflow-wrap: anywhere; }
+.amountRow dd { font-size: 1.35rem; color: var(--blue-700); }
+
+.notice { display: flex; align-items: flex-start; gap: 0.5rem; margin-top: 1.5rem; padding: 0.9rem 1rem; border-radius: var(--radius); background: var(--blue-50); color: var(--blue-900); font-size: 0.95rem; text-align: left; }
+.notice svg { flex-shrink: 0; margin-top: 2px; }
+
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; }
+
+.invalid p { max-width: 460px; margin-bottom: 1rem; color: var(--text-muted); }
+.warn { color: var(--orange-600); }
+
+@media (max-width: 560px) {
+  .actions > * { width: 100%; }
+}

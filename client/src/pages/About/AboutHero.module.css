@@ -1,0 +1,94 @@
+.hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 4rem) 0 5rem;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--cream-100) 0%, var(--peach-100) 50%, var(--rose-100) 100%);
+  isolation: isolate;
+}
+
+.blob { position: absolute; z-index: -1; border-radius: 50%; filter: blur(70px); opacity: 0.8; animation: drift 16s ease-in-out infinite; }
+.blobA { width: 420px; height: 420px; top: -120px; left: -80px; background: var(--butter-200); }
+.blobB { width: 380px; height: 380px; bottom: -140px; left: 35%; background: var(--rose-200); animation-delay: -5s; }
+.blobC { width: 360px; height: 360px; top: 10%; right: -100px; background: var(--sky-200); animation-delay: -10s; }
+
+.grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+.copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+
+.title { font-size: clamp(2.7rem, 5vw + 1rem, 5.5rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; }
+.line { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.line > span { display: inline-block; }
+.line:first-child > span { color: var(--slate-900); }
+.line:last-child > span {
+  background: linear-gradient(90deg, var(--blue-700), var(--purple-700));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text { max-width: 600px; font-size: 1.2rem; color: var(--slate-800); }
+
+.meaning { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.meaning li {
+  --c: var(--blue-600);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1.1rem 0.45rem 0.45rem;
+  border-radius: 999px;
+  background: var(--white);
+  box-shadow: 0 8px 20px -16px rgb(15 23 42 / 0.4);
+  border: 1px solid var(--soft);
+}
+.blue { --c: var(--blue-700); --soft: var(--sky-200); }
+.orange { --c: var(--orange-700); --soft: var(--peach-200); }
+.green { --c: var(--green-700); --soft: var(--mint-200); }
+.meaningIcon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--c); background: var(--soft); }
+.bn { font-size: 1.15rem; font-weight: 700; color: var(--slate-900); font-family: 'Noto Sans Bengali', 'Nirmala UI', 'Vrinda', var(--font); }
+.en { font-weight: 600; color: var(--c); }
+
+/* Rotating seal around the logo */
+.sealWrap { position: relative; width: min(420px, 100%); aspect-ratio: 1; margin-inline: auto; }
+.sealText { position: absolute; inset: 0; animation: rotate 30s linear infinite; }
+.sealText text { font-size: 15px; font-weight: 700; fill: var(--slate-900); }
+.sealCore {
+  position: absolute;
+  inset: 20%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--peach-200), var(--rose-200), var(--lilac-200), var(--sky-200), var(--mint-200), var(--peach-200));
+  padding: 10px;
+  box-shadow: 0 26px 50px -30px rgb(76 29 149 / 0.45);
+}
+.sealCore img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 6px solid var(--white); }
+
+.fact {
+  position: absolute;
+  padding: 0.55rem 1rem;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  color: var(--slate-600);
+  white-space: nowrap;
+  animation: bob 6s ease-in-out infinite;
+}
+.fact strong { font-size: 1.2rem; color: var(--slate-900); }
+/* Placed at the corners, outside the ring of seal text */
+.f1 { top: -2%; left: -12%; border-left: 4px solid var(--peach-200); }
+.f2 { top: 44%; right: -16%; border-left: 4px solid var(--rose-200); animation-delay: -2s; }
+.f3 { bottom: -2%; left: -6%; border-left: 4px solid var(--sky-200); animation-delay: -4s; }
+
+@keyframes rotate { to { transform: rotate(360deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.08); }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .sealWrap { width: min(300px, 70%); }
+  .f1 { left: -14%; }
+  .f2 { right: -18%; }
+  .f3 { left: -10%; }
+}

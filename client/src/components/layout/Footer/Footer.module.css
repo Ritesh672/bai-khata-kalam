@@ -1,0 +1,60 @@
+.footer {
+  background: var(--slate-900);
+  color: var(--slate-300);
+  padding-top: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.3fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+.brand { font-size: 1.5rem; font-weight: 700; color: var(--white); }
+.desc { margin-block: 1rem 1.25rem; font-size: 0.975rem; }
+
+.trust { display: grid; gap: 0.45rem; font-size: 0.9rem; }
+.trust li { display: flex; align-items: center; gap: 0.45rem; }
+.trust svg { color: var(--green-500); }
+.reg { margin-top: 1rem; font-size: 0.82rem; color: #94A3B8; }
+
+.heading {
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+
+.links { display: grid; gap: 0.7rem; }
+.links a, .contact a { transition: color 0.2s; }
+.links a:hover, .contact a:hover { color: var(--white); }
+
+.contact { display: grid; gap: 1rem; }
+.contact li { display: flex; gap: 0.75rem; align-items: flex-start; }
+.contact svg { flex-shrink: 0; margin-top: 3px; color: var(--orange-500); }
+.contact a { overflow-wrap: anywhere; }
+
+.footer :focus-visible { outline-color: var(--orange-500); }
+
+/* Touch screens: every footer link gets a 44px-tall tap area */
+@media (max-width: 768px) {
+  .brand { display: inline-block; padding-block: 0.4rem; }
+  .links { gap: 0; }
+  .links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .contact a { display: inline-flex; align-items: center; min-height: 44px; }
+  .contact li { align-items: center; }
+  .top { min-height: 44px; }
+}
+
+.bottom { border-top: 1px solid rgb(255 255 255 / 0.08); padding-block: 1.5rem; font-size: 0.9rem; }
+.bottomInner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; }
+.top { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--slate-300); font-weight: 500; }
+.top:hover { color: var(--white); }
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 576px) {
+  .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}

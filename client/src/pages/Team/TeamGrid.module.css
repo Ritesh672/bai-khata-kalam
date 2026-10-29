@@ -1,0 +1,92 @@
+.section {
+  background:
+    radial-gradient(700px 300px at 0% 100%, var(--rose-100), transparent 70%),
+    radial-gradient(700px 300px at 100% 0%, var(--aqua-100), transparent 70%),
+    var(--white);
+}
+
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
+
+.front,
+.back { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.blue { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.orange { --soft: var(--peach-200); --tint: var(--peach-100); --deep: var(--orange-700); }
+.green { --soft: var(--mint-200); --tint: var(--mint-100); --deep: var(--green-700); }
+.purple { --soft: var(--lilac-200); --tint: var(--lilac-100); --deep: var(--purple-700); }
+
+/* Front: profile card with a pastel banner */
+.front {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: inherit;
+  background: var(--white);
+  border: 1px solid var(--soft);
+  text-align: center;
+  box-shadow: 0 20px 36px -30px rgb(15 23 42 / 0.45);
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 42%;
+  background:
+    radial-gradient(var(--white) 1.2px, transparent 1.2px) 0 0 / 14px 14px,
+    linear-gradient(135deg, var(--soft), var(--tint));
+}
+.org {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--deep);
+  background: rgb(255 255 255 / 0.85);
+}
+/* Two-class selector so the soft card colours override the Avatar's default gradient */
+.front .avatar {
+  position: relative;
+  z-index: 1;
+  margin-top: -70px;
+  color: var(--deep);
+  background: linear-gradient(135deg, var(--tint), var(--soft));
+  box-shadow: 0 14px 26px -16px rgb(15 23 42 / 0.45);
+}
+.name { margin-top: 1rem; font-size: 1.15rem; }
+.role {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--deep);
+  background: var(--tint);
+  border: 1px solid var(--soft);
+}
+
+/* Back: soft pastel bio */
+.back {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1.75rem;
+  overflow: hidden;
+  border-radius: inherit;
+  color: var(--slate-800);
+  background: linear-gradient(150deg, var(--tint), var(--soft));
+  border: 1px solid var(--soft);
+}
+.quote { position: absolute; top: -1.5rem; left: 1rem; font-family: Georgia, serif; font-size: 9rem; line-height: 1; color: var(--white); opacity: 0.8; }
+.bio { position: relative; font-size: 1.02rem; line-height: 1.6; }
+.backName { margin-top: 1rem; font-size: 1.15rem; font-weight: 700; color: var(--slate-900); }
+.backRole { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--deep); }
+
+@media (max-width: 1024px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .cards { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; } }
+@media (max-width: 520px) { .cards { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; } }

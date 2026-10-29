@@ -1,0 +1,56 @@
+.section { background: var(--slate-50); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+.card {
+  --soft: var(--sky-200);
+  --tint: var(--sky-100);
+  --deep: var(--blue-700);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  min-height: 340px;
+  padding: 3rem;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(145deg, var(--tint) 0%, var(--white) 60%, var(--tint) 100%);
+  border: 1px solid var(--soft);
+  box-shadow: 0 26px 50px -40px rgb(15 23 42 / 0.5);
+  isolation: isolate;
+}
+.ocean { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.sunset { --soft: var(--peach-200); --tint: var(--peach-100); --deep: var(--orange-700); }
+
+.card h2 { color: var(--slate-900); font-size: clamp(1.8rem, 1.5vw + 1.2rem, 2.3rem); }
+.card p { max-width: 460px; font-size: 1.15rem; line-height: 1.7; color: var(--slate-600); }
+
+.icon { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 20px; color: var(--deep); background: var(--soft); }
+.quote {
+  position: absolute;
+  top: -3rem;
+  right: 1.5rem;
+  z-index: -1;
+  font-family: Georgia, serif;
+  font-size: 16rem;
+  line-height: 1;
+  color: var(--soft);
+  opacity: 0.7;
+}
+.ring {
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 28px solid var(--soft);
+  opacity: 0.45;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .card { padding: 2rem 1.5rem; min-height: 0; }
+  .quote { font-size: 11rem; }
+}

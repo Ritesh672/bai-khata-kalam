@@ -1,0 +1,115 @@
+/* The existing Bai Khata Kalam colour theme, given names. No new hues were introduced:
+   the *-700 shades are darker steps of the same colours, used only where white text
+   sits on them so it meets WCAG AA contrast (4.5:1). */
+:root {
+  /* Blue: primary, links, outline buttons */
+  --blue-50: #EFF6FF;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-900: #1E3A8A;
+
+  /* Green: donate / primary buttons */
+  --green-50: #F0FDF4;
+  --green-500: #22C55E;
+  --green-600: #16A34A;
+  --green-700: #15803D;
+  --green-800: #166534;
+  --emerald-500: #10B981;
+
+  /* Orange: highlights, badges */
+  --orange-50: #FFF7ED;
+  --orange-500: #F97316;
+  --orange-600: #EA580C;
+  --orange-700: #C2410C;
+
+  /* Purple & red accents (stat cards, certificates) */
+  --purple-50: #F5F3FF;
+  --purple-500: #8B5CF6;
+  --purple-700: #6D28D9;
+  --red-50: #FEF2F2;
+  --red-500: #EF4444;
+
+  /* Extra accents for a more colourful site */
+  --pink-50: #FDF2F8;
+  --pink-500: #EC4899;
+  --pink-600: #DB2777;
+  --teal-50: #F0FDFA;
+  --teal-500: #14B8A6;
+  --teal-700: #0F766E;
+  --amber-50: #FFFBEB;
+  --amber-400: #FBBF24;
+  --amber-500: #F59E0B;
+  --amber-700: #B45309;
+  --indigo-50: #EEF2FF;
+  --indigo-500: #6366F1;
+  --indigo-700: #4338CA;
+  --cyan-500: #06B6D4;
+  --violet-900: #2E1065;
+
+  /* Soft pastel palette: backgrounds and card fills (pair with slate text) */
+  --peach-100: #FFF1E8;
+  --peach-200: #FFDCC8;
+  --rose-100: #FDEEF3;
+  --rose-200: #F8D3E1;
+  --lilac-100: #F3EFFD;
+  --lilac-200: #DED5F8;
+  --sky-100: #EAF4FF;
+  --sky-200: #CFE4FA;
+  --mint-100: #E8F7EF;
+  --mint-200: #C9EBD8;
+  --butter-100: #FFF8E2;
+  --butter-200: #FBE8AE;
+  --aqua-100: #E5F7F5;
+  --aqua-200: #C2EBE6;
+
+  /* Navy & slate: dark sections, text */
+  --navy-950: #001F3D;
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-600: #475569;
+  --slate-500: #64748B;
+  --slate-300: #CBD5E1;
+  --slate-200: #E2E8F0;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+
+  /* Warm neutrals: section backgrounds */
+  --white: #FFFFFF;
+  --rose-50: #F8F6F6;
+  --cream-50: #FDFCF0;
+  --cream-100: #FCF9EA;
+  --gray-100: #F2F2F2;
+  --sand-200: #E5DCC5;
+  --sand-250: #E1D7BD;
+  --sand-300: #D8C9A7;
+
+  /* Semantic aliases */
+  --text: var(--slate-800);
+  --text-strong: var(--slate-900);
+  --text-muted: var(--slate-500);
+  --border: var(--slate-200);
+
+  /* Type, shape, depth, motion */
+  --font: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 0.5rem;
+  --radius: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.06);
+  --shadow: 0 6px 20px -6px rgb(15 23 42 / 0.12);
+  --shadow-lg: 0 20px 40px -12px rgb(15 23 42 / 0.22);
+  --container: 1200px;
+  --gutter: 1.5rem;
+  --section-y: 6rem;
+  --nav-h: 76px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 1.1rem;
+    --section-y: 4rem;
+    --nav-h: 66px;
+  }
+}

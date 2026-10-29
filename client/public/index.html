@@ -1,24 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Bai Khata Kalam is a government-registered NGO in India working towards education, community upliftment, and social impact. Support our mission and donate today."
-    />
+    <meta name="theme-color" content="#2563EB" />
+    <title>Bai Khata Kalam | Education NGO in Bishalgarh, Tripura</title>
+    <!-- data-rh lets react-helmet replace these defaults with each page's own tags (no duplicates) -->
+    <meta name="description" content="Bai Khata Kalam is a registered NGO in Bishalgarh, Tripura, giving underprivileged children quality, Montessori-based education. Support our school." data-rh="true" />
+    <meta name="robots" content="index, follow, max-image-preview:large" data-rh="true" />
     <meta name="google-site-verification" content="QT2260NBr4O8K4bfEIVHQM-y-FiqtQoqDSaDJ6giUNY" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.jpg" />
-    
+
+    <!-- Icons from the official logo. Google search results use a square favicon that is a multiple of 48px. -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="%PUBLIC_URL%/favicon-48.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <title>Bai Khata Kalam | Government Registered NGO in India</title>
+
+    <!-- Outfit font, loaded here instead of a CSS @import so it doesn't block rendering -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <!-- Loaded without blocking the first paint (text shows in a fallback font, then swaps to Outfit) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" /></noscript>
+
+    <!-- Social previews: WhatsApp/Facebook/LinkedIn crawlers don't run JavaScript, so these must be in the HTML shell. -->
+    <meta property="og:site_name" content="Bai Khata Kalam" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://www.baikhatakalam.com/" />
+    <meta property="og:title" content="Bai Khata Kalam | Education NGO in Bishalgarh, Tripura" />
+    <meta property="og:description" content="Quality, Montessori-based education for underprivileged children in Tripura. Support Bai Khata Kalam and Vidyasagar Vidyapith." />
+    <meta property="og:image" content="https://www.baikhatakalam.com/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bai Khata Kalam logo with the words Book. Notebook. Pen." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bai Khata Kalam | Education NGO in Bishalgarh, Tripura" />
+    <meta name="twitter:description" content="Quality, Montessori-based education for underprivileged children in Tripura." />
+    <meta name="twitter:image" content="https://www.baikhatakalam.com/og-default.jpg" />
+
+    <!-- Structured data: WebSite gives Google the site name for search results; NGO describes the organisation. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.baikhatakalam.com/#website",
+            "url": "https://www.baikhatakalam.com/",
+            "name": "Bai Khata Kalam",
+            "alternateName": ["BKK", "Bai Khata Kalam NGO", "বই খাতা কলম"],
+            "inLanguage": "en-IN",
+            "publisher": { "@id": "https://www.baikhatakalam.com/#org" }
+          },
+          {
+            "@type": "NGO",
+            "@id": "https://www.baikhatakalam.com/#org",
+            "name": "Bai Khata Kalam",
+            "alternateName": ["Bai Khata Kalam NGO", "বই খাতা কলম"],
+            "legalName": "BAI KHATA KALAM",
+            "url": "https://www.baikhatakalam.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.baikhatakalam.com/logo512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://www.baikhatakalam.com/og-default.jpg",
+            "description": "Registered non-profit society (Societies Registration Act, 1860; Reg. No. 9481 of 2024) in Bishalgarh, Tripura, providing quality, Montessori-based education to underprivileged children through Vidyasagar Vidyapith.",
+            "foundingDate": "2024-05-27",
+            "taxID": "AANAB6225G",
+            "identifier": [
+              { "@type": "PropertyValue", "propertyID": "Society Registration No. (Tripura)", "value": "9481 of 2024" },
+              { "@type": "PropertyValue", "propertyID": "NGO Darpan ID", "value": "TR/2025/0713069" }
+            ],
+            "telephone": "+91-9436362026",
+            "email": "bidhandas143@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Ambagan, P.O. Bishalgarh",
+              "addressLocality": "Bishalgarh",
+              "addressRegion": "Tripura",
+              "postalCode": "799102",
+              "addressCountry": "IN"
+            },
+            "areaServed": { "@type": "State", "name": "Tripura" },
+            "knowsAbout": ["Montessori education", "Primary education", "Child education in rural Tripura"],
+            "subOrganization": { "@id": "https://www.baikhatakalam.com/vidyasagar-vidyapith#school" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="padding:24px;font-family:sans-serif;max-width:720px">
+        <h1>Bai Khata Kalam: Education NGO in Bishalgarh, Tripura</h1>
+        <p>Bai Khata Kalam is a registered non-profit society (Reg. No. 9481 of 2024) providing quality, Montessori-based
+          education to underprivileged children through Vidyasagar Vidyapith in Ambagan, Bishalgarh, Tripura.</p>
+        <p>Call or WhatsApp +91 94363 62026. Please enable JavaScript to use this website.</p>
+        <p><a href="/vidyasagar-vidyapith">Our School</a> · <a href="/about">About</a> · <a href="/impact">Impact</a> ·
+          <a href="/team">Team</a> · <a href="/contact">Contact</a> · <a href="/donate">Donate</a></p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>

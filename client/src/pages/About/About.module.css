@@ -1,0 +1,103 @@
+/* ---------- Founder ---------- */
+.founder { background: var(--white); }
+.founderGrid { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: 4rem; align-items: center; }
+.portrait { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.portraitRing {
+  display: grid;
+  place-items: center;
+  width: min(300px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--white) 55%, transparent 56%),
+    conic-gradient(from 200deg, var(--peach-200), var(--rose-200), var(--lilac-200), var(--sky-200), var(--mint-200), var(--peach-200));
+  box-shadow: var(--shadow-lg);
+}
+.portraitName { margin-top: 1.5rem; font-size: 1.35rem; font-weight: 700; color: var(--slate-900); }
+.portraitRole { color: var(--text-muted); }
+.founderText { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.founderText h2 { font-size: clamp(1.9rem, 2vw + 1rem, 2.75rem); font-weight: 800; }
+.pullQuote { border-left: 5px solid var(--rose-200); padding-left: 1.75rem; }
+.pullQuote p { font-size: clamp(1.25rem, 1vw + 1rem, 1.6rem); line-height: 1.55; font-style: italic; color: var(--slate-800); }
+.pullQuote mark { background: linear-gradient(transparent 58%, var(--rose-200) 58%); color: inherit; }
+.pullQuote footer { margin-top: 1rem; font-weight: 600; color: var(--blue-700); }
+
+/* ---------- Timeline (each milestone has its own colour) ---------- */
+.journey { background: linear-gradient(180deg, var(--cream-100), #FFF4F8); }
+.timeline { position: relative; max-width: 1000px; margin-inline: auto; }
+.line { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; margin-left: -2px; border-radius: 4px; background: var(--slate-200); }
+.lineFill { height: 100%; border-radius: inherit; transform-origin: top; background: linear-gradient(180deg, var(--butter-200), var(--rose-200), var(--sky-200), var(--mint-200)); }
+.timeline ol { display: grid; gap: 2.5rem; }
+.milestone { --soft: var(--butter-200); --tint: var(--butter-100); --deep: var(--amber-700); position: relative; width: 50%; }
+.amber { --soft: var(--butter-200); --tint: var(--butter-100); --deep: var(--amber-700); }
+.pink { --soft: var(--rose-200); --tint: var(--rose-100); --deep: var(--pink-600); }
+.blue { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.green { --soft: var(--mint-200); --tint: var(--mint-100); --deep: var(--green-700); }
+.teal { --soft: var(--aqua-200); --tint: var(--aqua-100); --deep: var(--teal-700); }
+.left { padding-right: 3rem; }
+.right { margin-left: 50%; padding-left: 3rem; }
+.dot {
+  position: absolute;
+  top: 2rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--soft);
+  border: 4px solid var(--deep);
+  box-shadow: 0 0 0 6px var(--white);
+}
+.left .dot { right: -11px; }
+.right .dot { left: -11px; }
+.milestoneCard {
+  position: relative;
+  padding: 1.75rem 2rem;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--white);
+  box-shadow: 0 18px 36px -30px rgb(15 23 42 / 0.45);
+  border: 1px solid var(--soft);
+}
+.milestoneCard::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--soft);
+}
+.year {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.9rem;
+  border-radius: 999px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--deep);
+  background: var(--tint);
+  border: 1px solid var(--soft);
+}
+.milestoneCard h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.milestoneCard p { color: var(--slate-600); }
+
+/* ---------- Values ---------- */
+.values { background: var(--gray-100); }
+.valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.valueCard {
+  padding: 2px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--soft), var(--white));
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+.valueCard:hover { transform: translateY(-6px); box-shadow: 0 20px 36px -26px rgb(15 23 42 / 0.45); }
+.valueInner { display: flex; flex-direction: column; gap: 0.85rem; height: 100%; padding: 2.25rem; border-radius: 24px; background: linear-gradient(180deg, var(--tint), var(--white) 60%); }
+.valueTop { display: flex; align-items: center; justify-content: space-between; }
+.valueIcon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; color: var(--deep); background: var(--soft); }
+.valueNumber { font-size: 2.2rem; font-weight: 800; color: var(--soft); }
+.valueInner p { color: var(--slate-600); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .founderGrid, .valuesGrid { grid-template-columns: 1fr; }
+  .line { left: 11px; }
+  .milestone, .right { width: 100%; margin-left: 0; padding: 0 0 0 2.9rem; }
+  .left .dot, .right .dot { left: 0; right: auto; }
+}

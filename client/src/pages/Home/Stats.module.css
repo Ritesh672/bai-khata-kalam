@@ -1,0 +1,82 @@
+.stats {
+  position: relative;
+  padding-block: 5.5rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--sky-100) 0%, var(--lilac-100) 50%, var(--rose-100) 100%);
+}
+.orbA, .orbB { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.6; pointer-events: none; }
+.orbA { width: 360px; height: 360px; left: -120px; top: -140px; background: var(--butter-200); }
+.orbB { width: 380px; height: 380px; right: -140px; bottom: -180px; background: var(--aqua-200); }
+
+.grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* Soft gradient border: a slowly turning pastel conic gradient behind the white panel */
+.card {
+  --soft: var(--peach-200);
+  --soft2: var(--butter-200);
+  --tint: var(--peach-100);
+  --deep: var(--orange-700);
+  position: relative;
+  padding: 2px;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 18px 36px -24px rgb(15 23 42 / 0.25);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -60%;
+  z-index: -1;
+  background: conic-gradient(from 0deg, var(--soft), var(--soft2), var(--white) 40%, var(--white) 60%, var(--soft2), var(--soft));
+  animation: spin 10s linear infinite;
+}
+.orange { --soft: var(--peach-200); --soft2: var(--butter-200); --tint: var(--peach-100); --deep: var(--orange-700); }
+.green { --soft: var(--mint-200); --soft2: var(--aqua-200); --tint: var(--mint-100); --deep: var(--green-700); }
+.blue { --soft: var(--sky-200); --soft2: var(--lilac-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.purple { --soft: var(--lilac-200); --soft2: var(--rose-200); --tint: var(--lilac-100); --deep: var(--purple-700); }
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 2.5rem 1.25rem 2.25rem;
+  overflow: hidden;
+  border-radius: 26px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--tint) 0%, var(--white) 70%);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.9rem;
+  border-radius: 20px;
+  color: var(--deep);
+  background: var(--soft);
+  transform: rotate(-6deg);
+  transition: transform 0.4s var(--ease);
+}
+.card:hover .icon { transform: rotate(0deg) scale(1.06); }
+
+.value { font-size: clamp(2.4rem, 2vw + 1.6rem, 3.1rem); font-weight: 800; line-height: 1; color: var(--slate-900); }
+.label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--deep); }
+.watermark { position: absolute; right: -36px; bottom: -48px; color: var(--soft); opacity: 0.35; pointer-events: none; }
+
+.note { position: relative; margin-top: 2rem; text-align: center; color: var(--slate-600); font-size: 0.9rem; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) {
+  .stats { padding-block: 3.5rem; }
+  .grid { gap: 1rem; }
+  .inner { padding: 1.75rem 0.75rem 1.5rem; }
+  .icon { width: 48px; height: 48px; margin-bottom: 0.5rem; border-radius: 16px; }
+  .label { font-size: 0.78rem; letter-spacing: 0.03em; }
+}

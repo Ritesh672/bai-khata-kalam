@@ -1,0 +1,59 @@
+.section {
+  background:
+    radial-gradient(600px 300px at 0% 100%, var(--rose-100), transparent 70%),
+    radial-gradient(600px 300px at 100% 0%, var(--sky-100), transparent 70%),
+    var(--cream-50);
+}
+
+.grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.75rem; align-items: stretch; }
+.featured { height: 100%; }
+.stack { display: grid; gap: 1.75rem; }
+
+.card {
+  --soft: var(--sky-200);
+  --tint: var(--sky-100);
+  --deep: var(--blue-700);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 28px;
+  background: linear-gradient(160deg, var(--white) 0%, var(--tint) 100%);
+  border: 1px solid var(--soft);
+  box-shadow: 0 18px 36px -28px rgb(15 23 42 / 0.3);
+}
+.blue { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.green { --soft: var(--mint-200); --tint: var(--mint-100); --deep: var(--green-700); }
+.pink { --soft: var(--rose-200); --tint: var(--rose-100); --deep: var(--pink-600); }
+
+.media { position: relative; }
+.media::after { content: ''; position: absolute; inset: auto 0 0 0; height: 5px; background: var(--soft); }
+.media figure { border-radius: 0; }
+
+.body { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.8rem; padding: 2rem 2rem 2.25rem; }
+.top { display: flex; align-items: center; justify-content: space-between; }
+.icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; color: var(--deep); background: var(--soft); }
+.number { font-size: 2.4rem; font-weight: 800; line-height: 1; color: var(--soft); }
+.body h3 { font-size: 1.45rem; color: var(--slate-900); }
+.body p { color: var(--slate-600); }
+
+.blob {
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--soft), transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .body { padding: 1.5rem; }
+  .body h3 { font-size: 1.3rem; }
+}

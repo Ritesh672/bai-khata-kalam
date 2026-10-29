@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/tokens.css';
+import './styles/base.css';
+import './styles/utilities.css';
 import App from './App';
 import { HelmetProvider } from "react-helmet-async";
 import reportWebVitals from './reportWebVitals';
