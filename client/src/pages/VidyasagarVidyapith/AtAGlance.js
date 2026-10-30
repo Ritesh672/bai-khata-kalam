@@ -7,7 +7,7 @@ import styles from './AtAGlance.module.css';
 const facts = [
   { icon: MapPin, label: 'Location', value: 'Ambagan, Bishalgarh', tone: 'orange' },
   { icon: Languages, label: 'Medium', value: 'English', tone: 'blue' },
-  { icon: Users, label: 'Students', value: '37+', sub: 'in 2026', tone: 'green' },
+  { icon: Users, label: 'Children', value: '1,000+', sub: 'reached, with 200+ volunteers', tone: 'green' },
   { icon: GraduationCap, label: 'Teachers', value: '7', sub: 'dedicated educators', tone: 'purple' },
   { icon: BookOpen, label: 'Principal', value: 'Bidhan Das', tone: 'pink' },
   { icon: Sprout, label: 'Approach', value: 'Montessori', sub: 'hands-on learning', tone: 'teal' },
