@@ -94,4 +94,9 @@
 @media (max-width: 600px) {
   .cards { max-width: none; }
   .cards > li { flex-basis: 72%; }
+  /* Shorter banner and avatar so the name and role clear the "Read bio" button */
+  .banner { height: 34%; }
+  .front .avatar { width: 104px; height: 104px; margin-top: -52px; font-size: 2rem; }
+  .name { margin-top: 0.6rem; font-size: 1.05rem; }
+  .role { margin-top: 0.35rem; }
 }

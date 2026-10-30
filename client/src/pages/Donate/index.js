@@ -52,7 +52,7 @@ const Donate = () => {
       />
       <DonateHeader />
       <div className={`container ${styles.layout}`}>
-        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <AmountPicker amount={form.amount} onChange={(value) => setField('amount', value)} />
           <DonorDetails form={form} setField={setField} />
           <PaySection amount={form.amount} isProcessing={isProcessing} />

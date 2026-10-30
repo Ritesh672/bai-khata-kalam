@@ -34,7 +34,7 @@ const AmountPicker = ({ amount, onChange }) => {
         inputMode="numeric"
         min="1"
         step="1"
-        placeholder="Custom Amount"
+        placeholder="Other amount (₹)"
         value={isPreset ? '' : amount}
         onChange={(event) => onChange(event.target.value)}
       />

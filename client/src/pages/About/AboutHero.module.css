@@ -96,7 +96,10 @@
 /* phone-pass */
 @media (max-width: 600px) {
   .hero { padding: calc(var(--nav-h) + 1.75rem) 0 2.5rem; }
-  .sealWrap { display: none; }
+  /* Spinning seal stays on phones, smaller and without the floating chips */
+  .sealWrap { width: min(240px, 68%); margin-top: 1.25rem; }
+  .fact { display: none; }
+  .sealText text { font-size: 16px; }
   .copy { gap: 0.9rem; }
   .title { font-size: 2.35rem; }
   .text { font-size: 1rem; }

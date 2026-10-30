@@ -8,6 +8,7 @@ import CertificateGallery from '../../components/sections/CertificateGallery';
 import { legalDocuments, pledges } from '../../data/certificates';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './Certifications.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 // Shown right after the hero: credential-style cards with each official ID, then the pledges.
 const Certifications = () => (
@@ -42,6 +43,7 @@ const Certifications = () => (
           </motion.li>
         ))}
       </motion.ul>
+      <SwipeHint />
 
       <div className={styles.pledges}>
         <h3 className={styles.pledgeHeading}>Pledges we&rsquo;ve taken</h3>

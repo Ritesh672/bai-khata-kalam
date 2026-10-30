@@ -1,9 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart } from 'lucide-react';
 import Badge from '../../components/ui/Badge';
 import Button from '../../components/ui/Button';
-import HeroVisual from '../../components/three/HeroVisual';
+import HeroPhotos from './HeroPhotos';
 import { ease, fadeUp, stagger } from '../../lib/motion';
 import styles from './Home.module.css';
 
@@ -37,20 +36,7 @@ const HeroSection = () => (
         </motion.div>
       </motion.div>
 
-      <HeroVisual>
-        <motion.div
-          className={styles.floatingCard}
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.8, duration: 0.6, ease }}
-        >
-          <Heart className={styles.heart} fill="currentColor" aria-hidden="true" />
-          <div>
-            <p className={styles.floatingTitle}>37+ Students</p>
-            <p className={styles.floatingText}>Learning for free</p>
-          </div>
-        </motion.div>
-      </HeroVisual>
+      <HeroPhotos />
     </div>
   </section>
 );

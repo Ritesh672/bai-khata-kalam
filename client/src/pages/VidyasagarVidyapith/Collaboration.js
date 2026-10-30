@@ -6,6 +6,7 @@ import { collaboration } from '../../data/programs';
 import { images } from '../../data/images';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './Collaboration.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 const tones = ['blue', 'sunset', 'emerald', 'violet'];
 const tileImages = [images.classroomTeacher, null, null, images.studentsListening];
@@ -45,6 +46,7 @@ const Collaboration = () => (
           );
         })}
       </motion.ul>
+      <SwipeHint />
     </div>
   </section>
 );

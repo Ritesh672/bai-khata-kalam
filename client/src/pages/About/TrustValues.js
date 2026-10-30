@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Icon from '../../components/ui/Icon';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './About.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 const values = [
   {
@@ -43,6 +44,7 @@ const TrustValues = () => (
         </motion.li>
       ))}
     </motion.ul>
+    <SwipeHint />
     </div>
   </section>
 );

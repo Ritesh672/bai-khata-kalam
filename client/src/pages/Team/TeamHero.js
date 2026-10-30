@@ -32,7 +32,7 @@ const TeamHero = () => {
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.2 }}
           >
-            <Avatar name={founder.name} tone={founder.tone} size="lg" />
+            <Avatar name={founder.name} photo={founder.photo || founder.placeholder} tone={founder.tone} size="lg" />
           </motion.div>
           {teachers.map((member, index) => {
             const angle = angleFor(index, teachers.length);
@@ -45,7 +45,7 @@ const TeamHero = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.4 + index * 0.08 }}
               >
-                <Avatar name={member.name} tone={member.tone} size="md" />
+                <Avatar name={member.name} photo={member.photo || member.placeholder} tone={member.tone} size="md" />
               </motion.div>
             );
           })}

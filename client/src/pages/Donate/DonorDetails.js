@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Step from './Step';
 import styles from './Donate.module.css';
 
@@ -20,50 +21,58 @@ const DonorDetails = ({ form, setField }) => {
 
   return (
     <Step number={2} title="Your details">
+      <Field id="donor-name" label="Full Name">
+        <input type="text" autoComplete="name" required placeholder="Full name" {...bind('name')} />
+      </Field>
       <div className={styles.row}>
-        <Field id="donor-name" label="Full Name">
-          <input type="text" autoComplete="name" required placeholder="John Doe" {...bind('name')} />
-        </Field>
         <Field id="donor-email" label="Email Address">
-          <input type="email" autoComplete="email" required placeholder="john@example.com" {...bind('email')} />
+          <input type="email" autoComplete="email" required placeholder="Email (for your receipt)" {...bind('email')} />
+        </Field>
+        <Field id="donor-phone" label="Phone Number">
+          <input type="tel" autoComplete="tel" inputMode="tel" required placeholder="Phone number" {...bind('phone')} />
         </Field>
       </div>
-      <Field id="donor-phone" label="Phone Number">
-        <input type="tel" autoComplete="tel" required placeholder="+91 98765 43210" {...bind('phone')} />
-      </Field>
 
-      <label className={styles.checkbox}>
-        <input type="checkbox" checked={form.isCorporate} onChange={() => setField('isCorporate', !form.isCorporate)} />
-        <span>This is a corporate donation</span>
-      </label>
+      {/* Optional extras stay folded away so the donate button is reachable straight away */}
+      <details className={styles.extras}>
+        <summary>
+          Add a message or company details <span>(optional)</span>
+          <ChevronDown size={16} aria-hidden="true" />
+        </summary>
 
-      <AnimatePresence initial={false}>
-        {form.isCorporate && (
-          <motion.div
-            className={styles.corporate}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className={styles.row}>
-              <Field id="donor-companyName" label="Company Name">
-                <input type="text" placeholder="Acme Corp" {...bind('companyName')} />
-              </Field>
-              <Field id="donor-businessEmail" label="Business Email">
-                <input type="email" placeholder="csr@acme.com" {...bind('businessEmail')} />
-              </Field>
-            </div>
-            <label className={styles.checkbox}>
-              <input type="checkbox" checked={form.isCsr} onChange={() => setField('isCsr', !form.isCsr)} />
-              <span>Interested in CSR partnership</span>
-            </label>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <label className={styles.checkbox}>
+          <input type="checkbox" checked={form.isCorporate} onChange={() => setField('isCorporate', !form.isCorporate)} />
+          <span>This is a corporate donation</span>
+        </label>
 
-      <Field id="donor-message" label="Message (Optional)">
-        <textarea rows={3} placeholder="Your message of hope..." {...bind('message')} />
-      </Field>
+        <AnimatePresence initial={false}>
+          {form.isCorporate && (
+            <motion.div
+              className={styles.corporate}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+            >
+              <div className={styles.row}>
+                <Field id="donor-companyName" label="Company Name">
+                  <input type="text" placeholder="Acme Corp" {...bind('companyName')} />
+                </Field>
+                <Field id="donor-businessEmail" label="Business Email">
+                  <input type="email" placeholder="csr@acme.com" {...bind('businessEmail')} />
+                </Field>
+              </div>
+              <label className={styles.checkbox}>
+                <input type="checkbox" checked={form.isCsr} onChange={() => setField('isCsr', !form.isCsr)} />
+                <span>Interested in CSR partnership</span>
+              </label>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <Field id="donor-message" label="Message">
+          <textarea rows={3} placeholder="Your message of hope..." {...bind('message')} />
+        </Field>
+      </details>
     </Step>
   );
 };

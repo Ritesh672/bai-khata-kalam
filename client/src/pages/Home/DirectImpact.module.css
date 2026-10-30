@@ -61,6 +61,8 @@
 /* phone-pass */
 @media (max-width: 600px) {
   .stack { display: contents; }
+  /* .stack's cards are not direct children of the swipe row, so size them here */
+  .stack > * { flex: 0 0 82%; min-width: 0; scroll-snap-align: center; }
   .featured { height: auto; }
   .media { display: none; }
   .body { padding: 1.4rem; gap: 0.6rem; }

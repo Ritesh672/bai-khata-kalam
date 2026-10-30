@@ -7,6 +7,7 @@ import StockImage from '../../components/ui/StockImage';
 import { directImpact } from '../../data/programs';
 import { images } from '../../data/images';
 import styles from './DirectImpact.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 const palettes = ['blue', 'green', 'pink'];
 
@@ -52,6 +53,7 @@ const DirectImpactSection = () => {
             ))}
           </div>
         </div>
+        <SwipeHint />
       </div>
     </section>
   );

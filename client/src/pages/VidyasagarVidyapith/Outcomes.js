@@ -5,6 +5,7 @@ import SectionHeader from '../../components/ui/SectionHeader';
 import { schoolOutcomes } from '../../data/programs';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './Outcomes.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 const icons = [Sparkles, BookOpenCheck, HeartHandshake];
 
@@ -27,6 +28,7 @@ const Outcomes = () => (
           );
         })}
       </motion.ul>
+      <SwipeHint />
     </div>
   </section>
 );

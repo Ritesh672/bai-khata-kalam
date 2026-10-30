@@ -6,8 +6,9 @@ import SectionHeader from '../../components/ui/SectionHeader';
 import { team } from '../../data/team';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './TeamGrid.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
-// Profile-style flip cards: gradient banner + overlapping avatar on the front, gradient bio on the back.
+// Profile-style flip cards: pastel banner + overlapping avatar on the front, pastel bio on the back.
 const TeamGrid = () => (
   <section className={`section ${styles.section}`} aria-labelledby="team-grid-heading">
     <div className="container">
@@ -27,7 +28,7 @@ const TeamGrid = () => (
                   <div className={styles.banner}>
                     <span className={styles.org}>Bai Khata Kalam</span>
                   </div>
-                  <Avatar name={member.name} tone={member.tone} size="lg" className={styles.avatar} />
+                  <Avatar name={member.name} photo={member.photo} tone={member.tone} size="lg" className={styles.avatar} />
                   <h3 className={styles.name}>{member.name}</h3>
                   <span className={styles.role}>{member.role}</span>
                 </div>
@@ -44,6 +45,7 @@ const TeamGrid = () => (
           </motion.li>
         ))}
       </motion.ul>
+      <SwipeHint />
     </div>
   </section>
 );

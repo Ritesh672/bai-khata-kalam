@@ -46,5 +46,19 @@
   .mobile-swipe > * { flex: 0 0 82%; min-width: 0; scroll-snap-align: center; }
 }
 
+.swipe-hint { display: none; }
+@media (max-width: 600px) {
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-top: 0.15rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--slate-500);
+  }
+}
+
 .text-orange { color: var(--orange-600); }
 .text-center { text-align: center; }

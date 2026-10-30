@@ -4,6 +4,7 @@ import Icon from '../../components/ui/Icon';
 import SectionHeader from '../../components/ui/SectionHeader';
 import { fadeUp, stagger, viewportOnce } from '../../lib/motion';
 import styles from './SuccessModels.module.css';
+import SwipeHint from '../../components/ui/SwipeHint';
 
 const models = [
   {
@@ -49,6 +50,7 @@ const SuccessModels = () => (
           </motion.li>
         ))}
       </motion.ul>
+      <SwipeHint />
     </div>
   </section>
 );

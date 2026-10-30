@@ -82,11 +82,17 @@
 }
 
 /* phone-pass */
-/* Phones: no photo collage; heading and information only */
+/* Phones: heading and information first, then a compact photo set */
 @media (max-width: 600px) {
   .about { padding: calc(var(--nav-h) + 1.75rem) 0 2.25rem; }
-  .aboutGrid { gap: 0; }
-  .collage { display: none; }
+  .aboutGrid { gap: 1.5rem; }
+  .collage { display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.6rem; }
+  .collageMain { grid-column: 1 / -1; grid-row: 1; }
+  .collageMain figure { aspect-ratio: 16 / 9 !important; }
+  .collagePress { grid-column: 1; grid-row: 2; margin: 0; padding: 0.4rem; transform: none; }
+  .collagePress span { display: none; }
+  .collageSmall { grid-column: 2; grid-row: 2; align-self: stretch; margin: 0; }
+  .collageSmall figure { height: 100%; aspect-ratio: auto !important; border-width: 3px; }
   .aboutText { gap: 0.6rem; }
   .pageTitle { font-size: 2.3rem; }
   .tagline { font-size: 1.02rem; }
