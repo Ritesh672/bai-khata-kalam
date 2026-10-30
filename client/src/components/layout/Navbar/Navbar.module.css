@@ -1,15 +1,25 @@
+/* The header itself is see-through; only the bar and the tabs row catch taps, so the space
+   left behind when the tabs slide away never blocks the page underneath. */
 .header {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 1000;
+  pointer-events: none;
+}
+.barWrap,
+.tabs { pointer-events: auto; }
+
+.barWrap {
+  position: relative;
+  z-index: 2;
   background: rgb(255 255 255 / 0.96);
   backdrop-filter: saturate(160%) blur(10px);
   transition: box-shadow 0.3s;
 }
-.solid { box-shadow: 0 1px 0 var(--slate-200), var(--shadow); }
+.solid .barWrap { box-shadow: 0 1px 0 var(--slate-200), var(--shadow); }
 
 .bar {
-  height: var(--nav-h);
+  height: var(--bar-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,44 +61,74 @@
   background: var(--blue-600);
 }
 
-.actions { display: flex; align-items: center; gap: 0.5rem; }
-
-.toggle {
+/* ---------- Page tabs (tablets and phones) ---------- */
+.tabs {
   display: none;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  color: var(--slate-900);
+  position: relative;
+  z-index: 1;
+  height: var(--tabs-h);
+  background: rgb(255 255 255 / 0.96);
+  backdrop-filter: saturate(160%) blur(10px);
+  border-top: 1px solid var(--slate-100);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
 }
+/* Slides up behind the logo bar while scrolling down; back as soon as the visitor scrolls up */
+.tabsHidden .tabs { transform: translateY(-100%); }
 
-.mobileNav {
+.tabList {
+  display: flex;
+  gap: 1.35rem;
+  height: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabList::-webkit-scrollbar { display: none; }
+/* Centred when the tabs fit, still scrollable from the first tab when they don't */
+.tabList > li:first-child { margin-left: auto; }
+.tabList > li:last-child { margin-right: auto; }
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--slate-600);
+}
+.tabActive { color: var(--blue-600); }
+.tab.highlight { color: var(--orange-700); }
+.tabUnderline {
   position: absolute;
-  top: var(--nav-h);
   left: 0;
   right: 0;
-  height: calc(100vh - var(--nav-h));
-  overflow-y: auto;
-  padding-block: 1rem 2rem;
-  background: var(--white);
-  border-top: 1px solid var(--slate-200);
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--blue-600);
 }
-.mobileLink {
-  display: block;
-  padding: 1rem 0.25rem;
-  border-bottom: 1px solid var(--slate-100);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--slate-900);
-}
-.mobileActive { color: var(--blue-600); }
-.mobileDonate { margin-top: 1.5rem; }
+.highlight .tabUnderline { background: var(--orange-600); }
 
 @media (max-width: 1080px) {
   .desktopNav { display: none; }
-  .toggle { display: grid; }
+  .tabs { display: block; }
+  .solid .barWrap { box-shadow: none; }
+  .solid .tabs,
+  .solid.tabsHidden .barWrap { box-shadow: 0 1px 0 var(--slate-200), var(--shadow); }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 768px) {
+  .brand { gap: 0.55rem; font-size: 1.12rem; }
+  .logo { width: 38px; height: 38px; border-radius: 10px; }
+}
+
+/* Phones: tighter tabs so all six fit on a typical screen */
+@media (max-width: 600px) {
+  .tabList { gap: 1rem; }
+  .tab { font-size: 0.88rem; }
+}
+
+@media (max-width: 340px) {
   .brand span { display: none; }
 }

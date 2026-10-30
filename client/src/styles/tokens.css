@@ -102,15 +102,22 @@
   --container: 1200px;
   --gutter: 1.5rem;
   --section-y: 6rem;
-  --nav-h: 76px;
+  /* Header = logo bar + (on tablets and phones) the page tabs row. Content offsets use --nav-h. */
+  --bar-h: 76px;
+  --tabs-h: 0px;
+  --nav-h: calc(var(--bar-h) + var(--tabs-h));
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 1080px) {
+  :root { --tabs-h: 42px; }
 }
 
 @media (max-width: 768px) {
   :root {
     --gutter: 1.1rem;
     --section-y: 4rem;
-    --nav-h: 66px;
+    --bar-h: 60px;
   }
 }
 
