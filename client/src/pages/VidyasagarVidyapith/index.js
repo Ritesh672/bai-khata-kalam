@@ -1,6 +1,5 @@
 import React from 'react';
 import PageMeta from '../../components/layout/PageMeta';
-import SchoolHero from './SchoolHero';
 import AboutSchool from './AboutSchool';
 import AtAGlance from './AtAGlance';
 import Collaboration from './Collaboration';
@@ -33,7 +32,6 @@ const VidyasagarVidyapith = () => (
       path="/vidyasagar-vidyapith"
       jsonLd={schoolJsonLd}
     />
-    <SchoolHero />
     <AboutSchool />
     <AtAGlance />
     <Collaboration />

@@ -40,7 +40,7 @@ const DirectImpactSection = () => {
           title="Our Direct Impact"
           subtitle="Small steps lead to great journeys. Here's how we are changing lives on the ground in Tripura."
         />
-        <div className={styles.grid}>
+        <div className={`${styles.grid} mobile-swipe`}>
           <Reveal className={styles.featured}>
             <ImpactCard item={featured} index={0} image={images.classroomDesks} />
           </Reveal>

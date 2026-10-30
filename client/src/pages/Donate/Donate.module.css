@@ -1,13 +1,15 @@
 .page {
-  padding: calc(var(--nav-h) + 3rem) 0 6rem;
+  padding: calc(var(--nav-h) + 1.75rem) 0 5rem;
   background: var(--gray-100);
 }
 
-.header { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 3rem; text-align: center; }
-.header h1 { font-size: clamp(2.2rem, 3vw + 1rem, 3.4rem); font-weight: 800; }
-.header p { font-size: 1.15rem; color: var(--text-muted); }
+/* Compact title so the form starts near the top of the screen */
+.header { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 1.75rem; text-align: center; }
+.header h1 { font-size: clamp(1.6rem, 1.5vw + 1rem, 2.2rem); font-weight: 800; }
+.header p { font-size: 1rem; color: var(--text-muted); }
 
-.layout { display: grid; grid-template-columns: 1.35fr 1fr; gap: 2rem; align-items: start; }
+.layout { display: grid; gap: 2.5rem; }
+.layout > .form { width: 100%; max-width: 860px; margin-inline: auto; }
 
 /* ---------- Form ---------- */
 .form {
@@ -78,7 +80,8 @@
 .payNote { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-top: 0.85rem; font-size: 0.875rem; color: var(--text-muted); }
 
 /* ---------- Aside ---------- */
-.aside { display: grid; gap: 1.5rem; position: sticky; top: calc(var(--nav-h) + 1.5rem); }
+/* Summary, impact breakdown and trust panel: one row below the form */
+.below { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; align-items: start; }
 
 .summary {
   padding: 1.75rem;
@@ -120,12 +123,26 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 992px) {
-  .layout { grid-template-columns: 1fr; }
-  .aside { position: static; }
+  .below { grid-template-columns: 1fr; max-width: 860px; margin-inline: auto; width: 100%; }
 }
 
 @media (max-width: 560px) {
   .form { padding: 1.5rem; }
   .presets { grid-template-columns: repeat(2, 1fr); }
   .row { grid-template-columns: 1fr; }
+}
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .page { padding: calc(var(--nav-h) + 1.25rem) 0 3rem; }
+  .header { margin-bottom: 1.1rem; }
+  .header h1 { font-size: 1.6rem; }
+  .form { padding: 1.25rem; gap: 1.1rem; }
+  .step + .step { padding-top: 1.1rem; }
+  .stepLegend { margin-bottom: 0.85rem; font-size: 1.05rem; }
+  .layout { gap: 1.5rem; }
+  .below { gap: 1rem; }
+  .summary, .breakdown, .trust { padding: 1.25rem; }
+  .summaryAmount { font-size: 2.1rem; }
+  .thumbs { display: none; }
 }

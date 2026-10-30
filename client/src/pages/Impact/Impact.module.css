@@ -74,3 +74,18 @@
 @media (hover: none) {
   .galleryOverlay { opacity: 1; transform: none; }
 }
+
+/* phone-pass */
+/* Phones: drop the dashboard panel (the same numbers follow just below) and halve the gallery height */
+@media (max-width: 600px) {
+  .hero { padding: calc(var(--nav-h) + 1.75rem) 0 2.25rem; }
+  .heroGrid { gap: 0; }
+  .dashboard { display: none; }
+  .heroCopy { gap: 0.8rem; }
+  .heroCopy h1 { font-size: 2.1rem; }
+  .heroCopy p { font-size: 1rem; }
+  .masonry { columns: 2; column-gap: 0.6rem; }
+  .masonryItem { margin-bottom: 0.6rem; }
+  .masonryItem:nth-child(n + 7) { display: none; }
+  .galleryOverlay { display: none; }
+}

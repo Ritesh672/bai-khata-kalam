@@ -19,7 +19,7 @@ const Collaboration = () => (
         title="How We Work Together"
         subtitle="A multi-faceted approach to improving educational outcomes."
       />
-      <motion.ul className={styles.bento} variants={stagger(0.1)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+      <motion.ul className={`${styles.bento} mobile-swipe`} variants={stagger(0.1)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
         {collaboration.map((item, index) => {
           const image = tileImages[index];
           return (

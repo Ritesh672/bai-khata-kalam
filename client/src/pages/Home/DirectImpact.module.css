@@ -57,3 +57,16 @@
   .body { padding: 1.5rem; }
   .body h3 { font-size: 1.3rem; }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .stack { display: contents; }
+  .featured { height: auto; }
+  .media { display: none; }
+  .body { padding: 1.4rem; gap: 0.6rem; }
+  .icon { width: 48px; height: 48px; border-radius: 14px; }
+  .number { font-size: 1.8rem; }
+  .body h3 { font-size: 1.2rem; }
+  .body p { font-size: 0.95rem; }
+  .blob { display: none; }
+}

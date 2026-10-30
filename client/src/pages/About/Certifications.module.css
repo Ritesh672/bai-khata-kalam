@@ -117,3 +117,17 @@
   .grid { grid-template-columns: 1fr; max-width: 480px; }
   .pledges { margin-top: 3.5rem; }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .head { padding: 1.9rem 1.25rem 1.1rem; gap: 0.6rem; }
+  .icon { width: 42px; height: 42px; border-radius: 12px; }
+  .head h3 { font-size: 1.1rem; }
+  .stamp { top: 1.4rem; right: 0.9rem; }
+  .body { padding: 1.1rem 1.25rem 1.25rem; }
+  .text { font-size: 0.9rem; }
+  .pledges { margin-top: 2.25rem; }
+  .pledgeHeading { font-size: 1.3rem; }
+  .pledgeIntro { margin: 0.4rem auto 1.25rem; font-size: 0.93rem; }
+  .statement { margin-top: 1.75rem; font-size: 0.9rem; }
+}

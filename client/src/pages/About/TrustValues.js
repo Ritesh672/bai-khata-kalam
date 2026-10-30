@@ -28,7 +28,8 @@ const values = [
 // Value cards with a gradient border that lights up on hover and a numbered gradient icon.
 const TrustValues = () => (
   <section className={`section ${styles.values}`} aria-label="Our values">
-    <motion.ul className={`container ${styles.valuesGrid}`} variants={stagger(0.1)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+    <div className="container">
+    <motion.ul className={`${styles.valuesGrid} mobile-swipe`} variants={stagger(0.1)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
       {values.map((value, index) => (
         <motion.li key={value.title} variants={fadeUp} className={`${styles.valueCard} ${styles[value.tone]}`}>
           <div className={styles.valueInner}>
@@ -42,6 +43,7 @@ const TrustValues = () => (
         </motion.li>
       ))}
     </motion.ul>
+    </div>
   </section>
 );
 

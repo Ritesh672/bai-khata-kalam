@@ -18,7 +18,7 @@ const TeamGrid = () => (
         title="Our Educators"
         subtitle="Hover or tap a card to read more about each person."
       />
-      <motion.ul className={styles.cards} variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+      <motion.ul className={`${styles.cards} mobile-swipe`} variants={stagger(0.08)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
         {team.map((member) => (
           <motion.li key={member.name} variants={fadeUp}>
             <FlipCard

@@ -29,5 +29,22 @@
 }
 .skip-link:focus { top: 1rem; }
 
+/* Phones: a group of cards becomes one swipeable row (the next card peeks in), so a section
+   fits on about one screen instead of a long vertical stack. Add next to a grid's own class. */
+@media (max-width: 600px) {
+  .mobile-swipe {
+    display: flex !important;
+    gap: 0.85rem !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0.5rem var(--gutter) 1rem;
+    scrollbar-width: none;
+  }
+  .mobile-swipe::-webkit-scrollbar { display: none; }
+  .mobile-swipe > * { flex: 0 0 82%; min-width: 0; scroll-snap-align: center; }
+}
+
 .text-orange { color: var(--orange-600); }
 .text-center { text-align: center; }

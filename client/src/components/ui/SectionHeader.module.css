@@ -14,3 +14,10 @@
 
 .dark .title { color: var(--white); }
 .dark .subtitle { color: var(--slate-300); }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .header { gap: 0.6rem; margin-bottom: 1.5rem; }
+  .title { font-size: 1.6rem; }
+  .subtitle { font-size: 0.98rem; }
+}

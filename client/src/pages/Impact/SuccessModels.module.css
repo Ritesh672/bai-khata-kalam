@@ -48,3 +48,13 @@
   .grid { grid-template-columns: 1fr; }
   .stub, .details { padding-inline: 1.4rem; }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .stub { padding: 1.1rem 1.25rem; }
+  .icon { width: 44px; height: 44px; border-radius: 14px; }
+  .index { font-size: 1.6rem; }
+  .details { padding: 1.1rem 1.25rem 1.4rem; }
+  .details h3 { font-size: 1.15rem; }
+  .details p { font-size: 0.93rem; }
+}

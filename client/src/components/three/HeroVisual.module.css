@@ -26,3 +26,9 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
+/* phone-pass */
+/* Phones: no decorative hero art; the headline and buttons fill the first screen */
+@media (max-width: 600px) {
+  .visual { display: none; }
+}

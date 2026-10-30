@@ -113,3 +113,8 @@
     --nav-h: 66px;
   }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  :root { --section-y: 2.75rem; }
+}

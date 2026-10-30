@@ -19,7 +19,7 @@ const Certifications = () => (
         subtitle="We are a legally registered non-profit organisation. Every document below can be checked."
       />
 
-      <motion.ul className={styles.grid} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+      <motion.ul className={`${styles.grid} mobile-swipe`} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
         {legalDocuments.map((doc) => (
           <motion.li key={doc.title} variants={fadeUp}>
             <TiltCard className={`${styles.card} ${styles[doc.tone]}`} max={6}>

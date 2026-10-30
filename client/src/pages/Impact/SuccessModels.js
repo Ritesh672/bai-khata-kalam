@@ -34,7 +34,7 @@ const SuccessModels = () => (
   <section className={`section ${styles.section}`}>
     <div className="container">
       <SectionHeader title="Success Models" align="left" />
-      <motion.ul className={styles.grid} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+      <motion.ul className={`${styles.grid} mobile-swipe`} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
         {models.map((model, index) => (
           <motion.li key={model.title} variants={fadeUp} whileHover={{ y: -10, rotate: index === 1 ? 0 : index === 0 ? -1 : 1 }} className={`${styles.ticket} ${styles[model.tone]}`}>
             <div className={styles.stub}>

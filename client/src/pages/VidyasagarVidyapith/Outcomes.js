@@ -13,7 +13,7 @@ const Outcomes = () => (
   <section className={`section ${styles.section}`}>
     <div className="container">
       <SectionHeader badge="Real Results" title="Measuring Our Success" />
-      <motion.ul className={styles.grid} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+      <motion.ul className={`${styles.grid} mobile-swipe`} variants={stagger(0.12)} initial="hidden" whileInView="visible" viewport={viewportOnce}>
         {schoolOutcomes.map((item, index) => {
           const OutcomeIcon = icons[index];
           return (

@@ -101,3 +101,20 @@
   .milestone, .right { width: 100%; margin-left: 0; padding: 0 0 0 2.9rem; }
   .left .dot, .right .dot { left: 0; right: auto; }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .portrait { display: none; }
+  .founderText { gap: 0.8rem; }
+  .founderText h2 { font-size: 1.5rem; }
+  .pullQuote { padding-left: 1rem; }
+  .pullQuote p { font-size: 1.08rem; }
+  .timeline ol { gap: 1.1rem; }
+  .milestoneCard { padding: 1.1rem 1.1rem 1.1rem 1.4rem; }
+  .milestoneCard p { font-size: 0.93rem; }
+  .year { font-size: 1rem; margin-bottom: 0.4rem; }
+  .dot { top: 1.25rem; }
+  .valueInner { padding: 1.4rem; gap: 0.6rem; }
+  .valueIcon { width: 46px; height: 46px; }
+  .valueNumber { font-size: 1.7rem; }
+}

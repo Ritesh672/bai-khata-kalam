@@ -86,3 +86,14 @@
   .copy > :last-child { width: 100%; }
   .copy > :last-child a { width: 100%; }
 }
+
+/* phone-pass */
+@media (max-width: 600px) {
+  .layout { gap: 1.25rem; }
+  .copy { gap: 0.75rem; }
+  .copy h2 { font-size: 1.7rem; }
+  .lead { font-size: 1rem; }
+  .highlights, .chip, .ring { display: none; }
+  .stage { padding: 0; }
+  .frame { padding: 6px; border-radius: 22px; }
+}

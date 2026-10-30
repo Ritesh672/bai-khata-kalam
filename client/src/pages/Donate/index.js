@@ -57,7 +57,8 @@ const Donate = () => {
           <DonorDetails form={form} setField={setField} />
           <PaySection amount={form.amount} isProcessing={isProcessing} />
         </form>
-        <aside className={styles.aside}>
+        {/* Supporting information sits below the form, so donating is the first thing on the page */}
+        <aside className={styles.below} aria-label="Donation summary and trust information">
           <DonationSummary form={form} />
           <ImpactBreakdown amount={form.amount} />
           <TrustPanel />
