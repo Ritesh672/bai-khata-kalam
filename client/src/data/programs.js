@@ -79,15 +79,18 @@ export const philosophy = [
     title: 'Montessori Method',
     text: 'Our teachers use child-centred approaches that encourage exploration and natural curiosity. Children learn by touching, building and discovering, not just by repeating.',
     icon: 'target',
+    image: 'teacherWorkbook',
   },
   {
     title: 'Holistic Care',
     text: 'Beyond academics, we look after the emotional and social well-being of every student, so that school feels safe, warm and encouraging.',
     icon: 'heart',
+    image: 'girlAtChalkboard',
   },
   {
     title: 'Local Mentorship',
     text: 'Being part of the community, our educators understand each family’s situation and give rural children the tailored support they need.',
     icon: 'users',
+    image: 'classroomTeacher',
   },
 ];

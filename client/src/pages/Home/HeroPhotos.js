@@ -49,8 +49,8 @@ const HeroPhotos = () => (
       >
         <span className={styles.heart}><Heart size={18} fill="currentColor" aria-hidden="true" /></span>
         <span>
-          <strong>37+ Students</strong>
-          <span className={styles.cardText}>Learning for free</span>
+          <strong>1,000+ Children</strong>
+          <span className={styles.cardText}>Reached with 200+ volunteers</span>
         </span>
       </motion.div>
     </div>

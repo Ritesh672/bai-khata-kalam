@@ -1,55 +1,106 @@
-.section { background: var(--gray-100); }
-
-.panels { display: flex; gap: 1.25rem; min-height: 320px; }
-
-.panel {
-  --soft: var(--sky-200);
-  --tint: var(--sky-100);
-  --deep: var(--blue-700);
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2.25rem;
-  overflow: hidden;
-  border-radius: 30px;
-  background: var(--white);
-  border: 1px solid var(--soft);
-  cursor: pointer;
-  transition: background 0.4s, box-shadow 0.4s;
+.section {
+  background:
+    radial-gradient(600px 320px at 100% 0%, var(--mint-100), transparent 70%),
+    var(--gray-100);
 }
+
 .ocean { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
 .forest { --soft: var(--mint-200); --tint: var(--mint-100); --deep: var(--green-700); }
 .sunset { --soft: var(--peach-200); --tint: var(--peach-100); --deep: var(--orange-700); }
 
-.active {
-  flex: 2.2;
-  background: linear-gradient(140deg, var(--tint) 0%, var(--soft) 100%);
-  box-shadow: 0 24px 44px -32px rgb(15 23 42 / 0.5);
+.layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center; }
+
+/* ---------- Photo side ---------- */
+.visual { position: relative; }
+/* Soft blob behind the photo; its colour follows the selected principle */
+.blob {
+  position: absolute;
+  z-index: 0;
+  inset: 8% -4% -6% 10%;
+  border-radius: 40% 60% 55% 45% / 50% 40% 60% 50%;
+  background: var(--soft);
+  transition: background 0.5s;
 }
+.frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 6px solid var(--white);
+  background: var(--slate-100);
+  box-shadow: 0 26px 48px -28px rgb(15 23 42 / 0.5);
+}
+.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.chip {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--deep);
+  background: rgb(255 255 255 / 0.92);
+  box-shadow: 0 10px 22px -14px rgb(15 23 42 / 0.5);
+}
+.credit { position: relative; z-index: 1; margin-top: 0.85rem; font-size: 0.75rem; color: var(--slate-500); text-align: center; }
+.credit a { text-decoration: underline; text-underline-offset: 2px; }
 
-.top { display: flex; align-items: center; justify-content: space-between; }
-.icon { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; color: var(--deep); background: var(--tint); }
-.active .icon { background: var(--white); }
-.number { font-size: 2.5rem; font-weight: 800; color: var(--soft); }
-.active .number { color: var(--white); }
-
-.heading { font-size: 1.4rem; }
-.button { display: block; width: 100%; min-height: 44px; padding-block: 0.5rem; text-align: left; font-weight: 700; color: var(--slate-900); }
-.text { font-size: 1.08rem; line-height: 1.7; color: var(--slate-700, #334155); }
+/* ---------- Principles list ---------- */
+.list { display: grid; gap: 0.9rem; }
+.item {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.active {
+  background: linear-gradient(140deg, var(--tint), var(--white) 85%);
+  border-color: var(--soft);
+  box-shadow: 0 22px 40px -30px rgb(15 23 42 / 0.5);
+}
+.heading { font-size: 1.25rem; }
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 100%;
+  min-height: 64px;
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+.number { min-width: 2ch; font-size: 0.95rem; font-weight: 800; color: var(--slate-500); }
+.active .number { color: var(--deep); }
+.icon { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; color: var(--deep); background: var(--tint); transition: background 0.35s, color 0.35s; }
+.active .icon { color: var(--white); background: var(--deep); }
+.body { overflow: hidden; }
+/* Indented to line up with the title, past the number and icon */
+.text { padding: 0 1.25rem 1.25rem calc(1.25rem + 2ch + 44px + 1.8rem); font-size: 1.02rem; line-height: 1.7; color: var(--slate-600); }
 
 @media (max-width: 900px) {
-  .panels { flex-direction: column; min-height: 0; }
-  .active { flex: 1; }
-  .panel { padding: 1.6rem; }
+  .layout { grid-template-columns: 1fr; gap: 2rem; }
+  .visual { width: min(560px, 100%); margin-inline: auto; }
 }
 
-/* phone-pass */
+/* Phones: shorter photo, compact rows, text under the title instead of indented */
 @media (max-width: 600px) {
-  .panels { gap: 0.75rem; }
-  .panel { padding: 1.1rem 1.25rem; gap: 0.5rem; border-radius: 22px; }
-  .top { display: none; }
-  .heading { font-size: 1.15rem; }
-  .text { font-size: 0.95rem; }
+  .layout { gap: 1.25rem; }
+  .frame { aspect-ratio: 16 / 10; border-width: 4px; border-radius: 20px; }
+  .blob { inset: 10% -3% -5% 12%; }
+  .chip { left: 0.7rem; bottom: 0.7rem; padding: 0.35rem 0.75rem; font-size: 0.8rem; }
+  .credit { margin-top: 0.5rem; }
+  .list { gap: 0.6rem; }
+  .item { border-radius: 18px; }
+  .heading { font-size: 1.05rem; }
+  .button { min-height: 54px; gap: 0.7rem; padding: 0.6rem 0.9rem; }
+  .number { display: none; }
+  .icon { width: 36px; height: 36px; border-radius: 11px; }
+  .text { padding: 0 0.95rem 0.95rem; font-size: 0.93rem; line-height: 1.6; }
 }

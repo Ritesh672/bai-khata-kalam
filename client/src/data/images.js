@@ -68,6 +68,18 @@ export const images = {
     'Church of the King',
     'https://unsplash.com/photos/j9jZSqfH5YI',
   ),
+  teacherWorkbook: stock(
+    '1589206946274-929e4da3996b',
+    'A teacher sitting beside a young boy, guiding him through a colourful workbook',
+    'Ronald Felton',
+    'https://unsplash.com/photos/6c86TCPmNRQ',
+  ),
+  girlAtChalkboard: stock(
+    '1522661067900-ab829854a57f',
+    'A schoolgirl in uniform confidently writing on a chalkboard',
+    'Nikhita S',
+    'https://unsplash.com/photos/NsPDiPFTp4c',
+  ),
   pressClipping: {
     src: () => pressClipping,
     alt: "Newspaper report headlined 'Young athletes shine at Vidyasagar Vidyapith Sports', February 2026",

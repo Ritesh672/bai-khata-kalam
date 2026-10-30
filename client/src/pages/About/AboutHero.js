@@ -16,7 +16,7 @@ const meaning = [
 
 const floatingFacts = [
   { value: '2024', label: 'Registered', className: styles.f1 },
-  { value: '37+', label: 'Students', className: styles.f2 },
+  { value: '1000+', label: 'Children', className: styles.f2 },
   { value: '7', label: 'Teachers', className: styles.f3 },
 ];
 

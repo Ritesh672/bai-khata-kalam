@@ -18,6 +18,6 @@ export const timeline = [
   {
     year: '2026',
     title: 'Growing Impact',
-    text: 'Now supporting 37+ students with a team of 7 teachers. In February 2026, Vidyasagar Vidyapith held its first Annual Sports Day, covered by the local press.',
+    text: 'Now reaching 1,000+ children, with 200+ volunteers and a team of 7 teachers. In February 2026, Vidyasagar Vidyapith held its first Annual Sports Day, covered by the local press.',
   },
 ];

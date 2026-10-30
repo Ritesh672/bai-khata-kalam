@@ -8,9 +8,9 @@ import styles from './Numbers.module.css';
 
 // How each figure is counted, shown under the number.
 const notes = {
-  'Students Learning': 'Children enrolled at Vidyasagar Vidyapith in 2026.',
+  'Children Reached': 'Children supported through our school, programmes and events.',
   'Dedicated Teachers': 'Teachers on the school team in 2026.',
-  'School Supported': 'Our partner school in Ambagan, Bishalgarh.',
+  'Volunteers': 'People who have given their time to teach, mentor and help at events.',
   'Registered Since': 'Registered as a society with the Government of Tripura.',
 };
 
