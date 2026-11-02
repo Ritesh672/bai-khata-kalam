@@ -10,7 +10,7 @@ const DonationSuccess = () => {
 
   return (
     <div className={styles.page}>
-      <PageMeta title="Thank You for Your Donation | Bai Khata Kalam" path="/donation-success" noindex />
+      <PageMeta page="donationSuccess" />
       {state ? <Celebration donation={state} /> : <InvalidAccess />}
     </div>
   );

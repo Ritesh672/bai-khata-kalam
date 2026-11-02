@@ -7,7 +7,7 @@ import styles from './NotFound.module.css';
 
 const NotFound = () => (
   <section className={styles.page}>
-    <PageMeta title="Page Not Found | Bai Khata Kalam" noindex />
+    <PageMeta page="notFound" />
     <div className={`container ${styles.inner}`}>
       <motion.div
         className={styles.book}

@@ -45,11 +45,7 @@ const Donate = () => {
 
   return (
     <div className={styles.page}>
-      <PageMeta
-        title="Donate for Child Education in Tripura | Bai Khata Kalam"
-        description="Donate online to Bai Khata Kalam to support books, school supplies and quality education for underprivileged children in Bishalgarh, Tripura."
-        path="/donate"
-      />
+      <PageMeta page="donate" />
       <DonateHeader />
       <div className={`container ${styles.layout}`}>
         <form className={styles.form} onSubmit={handleSubmit}>

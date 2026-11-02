@@ -8,11 +8,7 @@ import ImpactCTA from './ImpactCTA';
 
 const Impact = () => (
   <>
-    <PageMeta
-      title="Our Impact | Education in Tripura | Bai Khata Kalam"
-      description="See how Bai Khata Kalam supports underprivileged children in Tripura with Montessori-based education, books and community programmes."
-      path="/impact"
-    />
+    <PageMeta page="impact" />
     <ImpactHero />
     <NumbersSection />
     <GallerySection />

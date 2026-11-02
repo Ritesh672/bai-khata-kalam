@@ -10,11 +10,7 @@ import TrustValues from './TrustValues';
 // Certifications come straight after the hero, so visitors see our legal standing first.
 const About = () => (
   <>
-    <PageMeta
-      title="About Bai Khata Kalam | NGO in Bishalgarh, Tripura"
-      description="Learn about Bai Khata Kalam, a registered NGO in Bishalgarh, Tripura: our mission, vision, founder, journey and legal registration."
-      path="/about"
-    />
+    <PageMeta page="about" />
     <AboutHero />
     <Certifications />
     <MissionVision />

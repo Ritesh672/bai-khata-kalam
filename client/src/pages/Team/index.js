@@ -7,11 +7,7 @@ import JoinCTA from './JoinCTA';
 
 const Team = () => (
   <>
-    <PageMeta
-      title="Our Team | Teachers & Founder | Bai Khata Kalam, Tripura"
-      description="Meet the founder and teachers of Bai Khata Kalam and Vidyasagar Vidyapith in Bishalgarh, Tripura, working for the future of underprivileged children."
-      path="/team"
-    />
+    <PageMeta page="team" />
     <TeamHero />
     <Philosophy />
     <TeamGrid />

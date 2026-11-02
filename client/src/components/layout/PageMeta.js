@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import seo from '../../data/seo.json';
 
-const SITE_URL = 'https://www.baikhatakalam.com';
+const { siteUrl: SITE_URL, defaultImage, pages } = seo;
 
 // "About Bai Khata Kalam | NGO in ..." -> "About Bai Khata Kalam"
 const shortName = (title) => title.split(' | ')[0];
@@ -16,17 +17,29 @@ const breadcrumbFor = (path, title) => ({
   ],
 });
 
-// Per-page <head> tags: title, description, canonical URL, optional noindex and structured data.
-// Open Graph defaults live in public/index.html because social crawlers don't run JavaScript.
-const PageMeta = ({ title, description, path, noindex = false, jsonLd }) => {
+// Per-page <head> tags, read from data/seo.json: title, description, canonical URL, social preview,
+// optional noindex and structured data. scripts/prerender-meta.js writes the same tags into each
+// page's HTML file at build time, so crawlers that don't run JavaScript see them too.
+const PageMeta = ({ page, jsonLd }) => {
+  const { title, description, path, noindex = false, image = defaultImage } = pages[page];
+  const url = path && `${SITE_URL}${path}`;
+  const imageUrl = `${SITE_URL}${image.src}`;
   const showBreadcrumb = path && path !== '/' && !noindex;
 
   return (
     <Helmet>
       <title>{title}</title>
       {description && <meta name="description" content={description} />}
-      {path && <link rel="canonical" href={`${SITE_URL}${path}`} />}
+      {url && <link rel="canonical" href={url} />}
       <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+      {url && <meta property="og:url" content={url} />}
+      <meta property="og:title" content={title} />
+      {description && <meta property="og:description" content={description} />}
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:alt" content={image.alt} />
+      <meta name="twitter:title" content={title} />
+      {description && <meta name="twitter:description" content={description} />}
+      <meta name="twitter:image" content={imageUrl} />
       {jsonLd && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
       {showBreadcrumb && <script type="application/ld+json">{JSON.stringify(breadcrumbFor(path, title))}</script>}
     </Helmet>

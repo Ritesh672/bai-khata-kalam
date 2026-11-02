@@ -1,0 +1,57 @@
+{
+  "siteUrl": "https://www.baikhatakalam.com",
+  "defaultImage": {
+    "src": "/og-default.jpg",
+    "alt": "Bai Khata Kalam logo with the words Book. Notebook. Pen."
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "title": "Bai Khata Kalam | Education NGO in Bishalgarh, Tripura",
+      "description": "Bai Khata Kalam is a registered NGO in Bishalgarh, Tripura, giving underprivileged children quality, Montessori-based education. Support our school."
+    },
+    "school": {
+      "path": "/vidyasagar-vidyapith",
+      "title": "Vidyasagar Vidyapith, Bishalgarh, Tripura | Bai Khata Kalam",
+      "description": "Vidyasagar Vidyapith, an English-medium school in Ambagan, Bishalgarh, Tripura recognised by the Govt. of Tripura: our mission, yearly fees, admissions and how to support the school.",
+      "image": {
+        "src": "/og-school.jpg",
+        "alt": "Vidyasagar Vidyapith school signboard and logo, Ambagan, Bishalgarh, Tripura"
+      }
+    },
+    "about": {
+      "path": "/about",
+      "title": "About Bai Khata Kalam | NGO in Bishalgarh, Tripura",
+      "description": "Learn about Bai Khata Kalam, a registered NGO in Bishalgarh, Tripura: our mission, vision, founder, journey and legal registration."
+    },
+    "impact": {
+      "path": "/impact",
+      "title": "Our Impact | Education in Tripura | Bai Khata Kalam",
+      "description": "See how Bai Khata Kalam supports underprivileged children in Tripura with Montessori-based education, books and community programmes."
+    },
+    "team": {
+      "path": "/team",
+      "title": "Our Team | Teachers & Founder | Bai Khata Kalam, Tripura",
+      "description": "Meet the founder and teachers of Bai Khata Kalam and Vidyasagar Vidyapith in Bishalgarh, Tripura, working for the future of underprivileged children."
+    },
+    "contact": {
+      "path": "/contact",
+      "title": "Contact Bai Khata Kalam | Bishalgarh, Tripura",
+      "description": "Contact Bai Khata Kalam in Bishalgarh, Sepahijala, Tripura 799102. Call or WhatsApp +91 9436362026 to volunteer, partner or ask a question."
+    },
+    "donate": {
+      "path": "/donate",
+      "title": "Donate for Child Education in Tripura | Bai Khata Kalam",
+      "description": "Donate online to Bai Khata Kalam to support books, school supplies and quality education for underprivileged children in Bishalgarh, Tripura."
+    },
+    "donationSuccess": {
+      "path": "/donation-success",
+      "title": "Thank You for Your Donation | Bai Khata Kalam",
+      "noindex": true
+    },
+    "notFound": {
+      "title": "Page Not Found | Bai Khata Kalam",
+      "noindex": true
+    }
+  }
+}

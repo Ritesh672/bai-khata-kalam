@@ -18,6 +18,8 @@ const schoolJsonLd = {
   foundingDate: '2024',
   telephone: ['+919436362026', '+918119982977'],
   url: 'https://www.baikhatakalam.com/vidyasagar-vidyapith',
+  image: 'https://www.baikhatakalam.com/og-school.jpg',
+  description: 'English-medium school in Ambagan, Bishalgarh, Tripura, recognised by the Govt. of Tripura and run by Bai Khata Kalam.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Ambagan, P.O. Bishalgarh',
@@ -31,12 +33,7 @@ const schoolJsonLd = {
 
 const VidyasagarVidyapith = () => (
   <>
-    <PageMeta
-      title="Vidyasagar Vidyapith, Bishalgarh, Tripura | Bai Khata Kalam"
-      description="Vidyasagar Vidyapith, an English-medium school in Ambagan, Bishalgarh, Tripura recognised by the Govt. of Tripura: our mission, yearly fees, admissions and how to support the school."
-      path="/vidyasagar-vidyapith"
-      jsonLd={schoolJsonLd}
-    />
+    <PageMeta page="school" jsonLd={schoolJsonLd} />
     <AboutSchool />
     <AtAGlance />
     <Mission />

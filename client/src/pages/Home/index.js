@@ -10,11 +10,7 @@ import CTASection from './CTASection';
 
 const Home = () => (
   <>
-    <PageMeta
-      title="Bai Khata Kalam | Education NGO in Bishalgarh, Tripura"
-      description="Bai Khata Kalam is a registered NGO in Bishalgarh, Tripura, giving underprivileged children quality, Montessori-based education. Support our school."
-      path="/"
-    />
+    <PageMeta page="home" />
     <HeroSection />
     <TrustSection />
     <StatsSection />
