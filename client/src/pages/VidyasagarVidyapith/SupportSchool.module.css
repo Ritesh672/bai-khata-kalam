@@ -1,0 +1,79 @@
+.section {
+  background: linear-gradient(135deg, var(--rose-100), var(--butter-100) 50%, var(--sky-100));
+}
+
+.head { max-width: 640px; margin: 0 auto 2.5rem; text-align: center; }
+.heart { display: inline-grid; place-items: center; width: 64px; height: 64px; margin-bottom: 0.9rem; border-radius: 20px; color: var(--pink-600); background: var(--white); box-shadow: 0 14px 28px -18px rgb(15 23 42 / 0.5); }
+.head h2 { font-size: clamp(1.8rem, 2vw + 1rem, 2.6rem); font-weight: 800; color: var(--slate-900); }
+.head p { margin-top: 0.6rem; font-size: 1.1rem; color: var(--slate-600); }
+
+.grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; align-items: stretch; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem;
+  border-radius: 28px;
+  background: var(--white);
+  box-shadow: 0 24px 44px -32px rgb(15 23 42 / 0.5);
+}
+.card h3 { font-size: 1.35rem; color: var(--slate-900); }
+.card p { color: var(--slate-600); }
+.cardIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; }
+.online .cardIcon { color: var(--green-700); background: var(--mint-100); }
+.bank .cardIcon { color: var(--blue-700); background: var(--sky-100); }
+.actions { display: flex; flex-direction: column; gap: 0.7rem; margin-top: auto; padding-top: 0.75rem; }
+
+.bank { flex-direction: row; gap: 1.75rem; }
+.bankBody { display: flex; flex-direction: column; gap: 0.6rem; flex: 1; min-width: 0; }
+.bankPoster { width: 190px; flex-shrink: 0; align-self: center; }
+
+.details { display: grid; gap: 0.1rem; margin-top: 0.3rem; padding: 0.35rem 0.9rem; border-radius: 16px; background: var(--slate-50); border: 1px solid var(--slate-200); }
+.detail { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 46px; }
+.detail + .detail { border-top: 1px dashed var(--slate-200); }
+.detail dt { font-size: 0.85rem; color: var(--slate-500); white-space: nowrap; }
+.detail dd { display: flex; align-items: center; gap: 0.5rem; margin: 0; font-weight: 700; color: var(--slate-900); text-align: right; }
+.mono { font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 34px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue-700);
+  background: var(--sky-100);
+  border: 1px solid var(--sky-200);
+}
+.note { font-size: 0.85rem; }
+.note a { color: var(--green-700); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 992px) {
+  .grid { grid-template-columns: 1fr; max-width: 720px; margin-inline: auto; }
+}
+
+/* Phones: compact cards; the bank poster is reachable from a small thumbnail */
+@media (max-width: 600px) {
+  .head { margin-bottom: 1.25rem; }
+  .heart { width: 52px; height: 52px; margin-bottom: 0.6rem; border-radius: 16px; }
+  .head h2 { font-size: 1.6rem; }
+  .head p { font-size: 0.95rem; }
+  .grid { gap: 0.9rem; }
+  .card { padding: 1.2rem; gap: 0.45rem; border-radius: 22px; }
+  .card h3 { font-size: 1.15rem; }
+  .card p { font-size: 0.92rem; }
+  .cardIcon { width: 40px; height: 40px; border-radius: 12px; }
+  .actions { flex-direction: row; flex-wrap: wrap; gap: 0.5rem; }
+  .actions > * { flex: 1 1 auto; }
+  .bank { flex-direction: column; gap: 0.9rem; }
+  .bankPoster { width: 150px; }
+  .details { padding: 0.2rem 0.7rem; }
+  .detail { flex-wrap: wrap; column-gap: 0.5rem; min-height: 44px; padding-block: 0.3rem; }
+  .detail dd { margin-left: auto; }
+  .detail dt { font-size: 0.78rem; }
+  .detail dd { font-size: 0.9rem; }
+  .note { font-size: 0.8rem; }
+}

@@ -8,6 +8,8 @@ export const org = {
   shortAddress: 'Bishalgarh, Tripura',
   phone: '+91 94363 62026',
   phoneHref: 'tel:+919436362026',
+  altPhone: '+91 81199 82977',
+  altPhoneHref: 'tel:+918119982977',
   whatsappHref: 'https://wa.me/919436362026',
   email: 'bidhandas143@gmail.com',
   mapsHref: 'https://www.google.com/maps/search/?api=1&query=Ambagan%2C+Bishalgarh%2C+Tripura+799102',

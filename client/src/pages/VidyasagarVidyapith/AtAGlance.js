@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, GraduationCap, Languages, MapPin, Sprout, Users } from 'lucide-react';
+import { BookOpen, GraduationCap, Languages, MapPin, ShieldCheck, Users } from 'lucide-react';
 import { scaleIn, stagger, viewportOnce } from '../../lib/motion';
 import styles from './AtAGlance.module.css';
 
 const facts = [
   { icon: MapPin, label: 'Location', value: 'Ambagan, Bishalgarh', tone: 'orange' },
-  { icon: Languages, label: 'Medium', value: 'English', tone: 'blue' },
+  { icon: Languages, label: 'Medium', value: 'English', sub: 'established 2024', tone: 'blue' },
+  { icon: ShieldCheck, label: 'Recognised', value: 'Govt. of Tripura', tone: 'teal' },
   { icon: Users, label: 'Children', value: '1,000+', sub: 'reached, with 200+ volunteers', tone: 'green' },
   { icon: GraduationCap, label: 'Teachers', value: '7', sub: 'dedicated educators', tone: 'purple' },
   { icon: BookOpen, label: 'Principal', value: 'Bidhan Das', tone: 'pink' },
-  { icon: Sprout, label: 'Approach', value: 'Montessori', sub: 'hands-on learning', tone: 'teal' },
 ];
 
 // Sticker-style fact cards: a gradient icon badge floats over each pastel card.

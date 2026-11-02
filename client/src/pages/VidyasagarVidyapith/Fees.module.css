@@ -1,0 +1,86 @@
+.section {
+  background:
+    radial-gradient(600px 320px at 100% 0%, var(--lilac-100), transparent 70%),
+    radial-gradient(500px 260px at 0% 100%, var(--mint-100), transparent 70%),
+    var(--cream-100);
+}
+
+.grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center; }
+
+.title { margin-top: 1rem; font-size: clamp(1.7rem, 1.6vw + 1rem, 2.5rem); font-weight: 800; color: var(--slate-900); }
+.subtitle { margin: 0.4rem 0 1.5rem; font-size: 1.05rem; color: var(--slate-600); }
+
+/* Receipt card: one row per fee, amount on the right */
+.receipt {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.6rem;
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 22px 40px -30px rgb(15 23 42 / 0.5);
+}
+.row {
+  --soft: var(--sky-200);
+  --tint: var(--sky-100);
+  --deep: var(--blue-700);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 16px;
+  transition: background 0.2s;
+}
+.row:hover { background: var(--tint); }
+.row + .row { border-top: 1px dashed var(--slate-200); }
+.sky { --soft: var(--sky-200); --tint: var(--sky-100); --deep: var(--blue-700); }
+.mint { --soft: var(--mint-200); --tint: var(--mint-100); --deep: var(--green-700); }
+.peach { --soft: var(--peach-200); --tint: var(--peach-100); --deep: var(--orange-700); }
+.lilac { --soft: var(--lilac-200); --tint: var(--lilac-100); --deep: var(--purple-700); }
+.rose { --soft: var(--rose-200); --tint: var(--rose-100); --deep: var(--pink-600); }
+
+.icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 13px; color: var(--deep); background: var(--tint); border: 1px solid var(--soft); }
+.what { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.what strong { font-size: 1rem; color: var(--slate-900); line-height: 1.3; }
+.what span { font-size: 0.85rem; color: var(--slate-500); }
+.amount { font-size: 1.2rem; font-weight: 800; color: var(--deep); white-space: nowrap; }
+
+.summary { margin-top: 0.9rem; font-size: 0.92rem; color: var(--slate-600); }
+
+.admissions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 1.1rem; font-weight: 600; color: var(--slate-800); }
+.admissions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 40px;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--green-700);
+  background: var(--mint-100);
+  border: 1px solid var(--mint-200);
+}
+
+.posterCol { width: min(400px, 100%); margin-inline: auto; transform: rotate(1.5deg); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 2rem; }
+  .posterCol { transform: none; }
+}
+
+/* Phones: the list carries the information; the notice shows as a short preview that opens full size */
+@media (max-width: 600px) {
+  .grid { gap: 1.1rem; }
+  .title { margin-top: 0.6rem; font-size: 1.55rem; }
+  .subtitle { margin: 0.25rem 0 0.9rem; font-size: 0.95rem; }
+  .receipt { padding: 0.35rem; border-radius: 18px; }
+  .row { gap: 0.65rem; padding: 0.55rem 0.6rem; }
+  .icon { width: 34px; height: 34px; border-radius: 10px; }
+  .what strong { font-size: 0.9rem; }
+  .what span { font-size: 0.78rem; }
+  .amount { font-size: 1.02rem; }
+  .summary { margin-top: 0.6rem; font-size: 0.85rem; }
+  .admissions { margin-top: 0.75rem; font-size: 0.88rem; }
+  .admissions span { flex-basis: 100%; }
+  .posterCol { width: 100%; }
+  .poster img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+}
